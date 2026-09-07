@@ -8,3 +8,4 @@ out
 public/video-thumbs
 
 .vercel
+.env*
