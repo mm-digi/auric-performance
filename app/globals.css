@@ -719,7 +719,7 @@ button {
   font-weight: 400;
   letter-spacing: 0.04em;
   margin: 8px 0 16px;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 
 .program-copy p {
@@ -771,6 +771,12 @@ button {
 .offer-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.coaching-offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -1234,6 +1240,7 @@ button {
   .program-row,
   .program-row:nth-child(even),
   .offer-grid,
+  .coaching-offer-grid,
   .store-grid,
   .store-card.is-featured,
   .notice-bar,

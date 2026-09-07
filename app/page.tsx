@@ -17,9 +17,9 @@ export default function HomePage() {
             <span className="hero-line">physical performance</span>
           </h1>
           <p className="lead">
-            Evidence-informed performance coaching engineered for the top 1%.
-            Train with intent. Build strength, endurance and work capacity that
-            transfers.
+            OUTRUN:OUTLIFT:OUTPERFORM the old version of you. Build strength,
+            improve your running and become a more complete athlete with
+            programming by Royal Marine PTIs.
           </p>
           <div className="actions">
             <Link href="/contact" className="btn btn-gold">

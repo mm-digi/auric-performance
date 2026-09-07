@@ -2,160 +2,29 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import LoopVideo from "@/components/LoopVideo";
 
-export const metadata: Metadata = {
-  title: "Programmes",
-  description:
-    "Auric Performance coaching programmes: Hybrid Athlete Base Builder, Advanced Hybrid Athlete, Female Hybrid Athlete, The Tactical Athlete and The Auric Performance Athlete.",
-};
+export const metadata: Metadata = { title: "Programmes", description: "Auric Performance hybrid training, rehabilitation and personalised coaching programmes, programmed by Royal Marine PTIs." };
 
 const programmes = [
-  {
-    id: "hybrid-athlete-base-builder",
-    kicker: "Programme 01 · 12 week 1-2-1 coaching",
-    title: "Hybrid Athlete Base Builder",
-    video: "/videos/coaches.mp4",
-    price: "£600 upfront or £50 per week",
-    intro:
-      "For clients with 12 months or less gym experience who want structured individual coaching and a strong performance foundation.",
-    points: [
-      "12 weeks of 1-2-1 coaching",
-      "Weekly check-ins via WhatsApp",
-      "For 12 months or less gym experience",
-      "Free Nutrition Plan when paid upfront",
-    ],
-  },
-  {
-    id: "advanced-hybrid-athlete",
-    kicker: "Programme 02 · 12 week 1-2-1 coaching",
-    title: "Advanced Hybrid Athlete",
-    video: "/videos/alex-bar.mp4",
-    price: "£600 upfront or £50 per week",
-    intro:
-      "For clients with 12 or more months of gym experience who are ready for a more advanced individual coaching approach.",
-    points: [
-      "12 weeks of 1-2-1 coaching",
-      "Weekly check-ins via WhatsApp",
-      "For 12+ months gym experience",
-      "Free Nutrition Plan when paid upfront",
-    ],
-  },
-  {
-    id: "female-hybrid-athlete",
-    kicker: "Programme 03 · 12 week 1-2-1 coaching",
-    title: "Female Hybrid Athlete",
-    video: "/videos/run.mp4",
-    price: "£600 upfront or £50 per week",
-    intro:
-      "Individualised 1-2-1 coaching for women with or without previous gym experience.",
-    points: [
-      "Suitable with or without gym experience",
-      "Each programme tailored to the individual",
-      "Weekly check-ins via WhatsApp",
-      "Free Nutrition Plan when paid upfront",
-    ],
-  },
-  {
-    id: "the-tactical-athlete",
-    kicker: "Programme 04 · 12 week 1-2-1 coaching",
-    title: "The Tactical Athlete",
-    video: "/videos/alex-row.mp4",
-    price: "£600 upfront or £50 per week",
-    intro:
-      "For serving tactical athletes across the military and blue-light services. This is not a pre-joining programme.",
-    points: [
-      "For serving military and blue-light personnel",
-      "12 weeks of 1-2-1 coaching",
-      "Weekly check-ins via WhatsApp",
-      "Free Nutrition Plan when paid upfront",
-    ],
-  },
-  {
-    id: "the-auric-performance-athlete",
-    kicker: "Programme 05 · Full service 1-2-1 coaching",
-    title: "The Auric Performance Athlete",
-    video: "/videos/box.mp4",
-    price: "£400 per month or £100 per week",
-    intro:
-      "For clients who want the complete Auric Performance coaching service, with or without previous gym experience.",
-    points: [
-      "Weekly check-ins via WhatsApp",
-      "Free personalised T-shirt",
-      "Nutrition Plan included with weekly option",
-      "One sponsored competition entry per year after 6 months, capped at £800",
-    ],
-  },
+  { id: "outrun", kicker: "Hybrid programme · 12-week training blocks", title: "OUTRUN", video: "/videos/run.mp4", price: "£29.99 per month", intro: "A hybrid training programme designed to improve running performance while maintaining strength, muscle and athleticism.", points: ["Run faster, get stronger and become a more complete athlete", "Delivered in progressive 12-week training blocks", "Programmed by Royal Marine PTIs"] },
+  { id: "outlift", kicker: "Hybrid programme · 12-week training blocks", title: "OUTLIFT", video: "/videos/alex-bar.mp4", price: "£29.99 per month", intro: "A hybrid training programme designed to build strength while maintaining running performance, fitness and athleticism.", points: ["Get stronger without losing your engine", "Delivered in progressive 12-week training blocks", "Programmed by Royal Marine PTIs"] },
+  { id: "outperform", kicker: "Hybrid programme · 12-week training blocks", title: "OUTPERFORM", video: "/videos/box.mp4", price: "£29.99 per month", intro: "A hybrid training programme designed to build strength and maximise running performance.", points: ["Become stronger, faster and more capable across every aspect of your performance", "Delivered in progressive 12-week training blocks", "Programmed by Royal Marine PTIs"] },
+  { id: "complete-package", kicker: "Complete programme package · Unlimited changes", title: "OUTRUN:OUTLIFT:OUTPERFORM", video: "/videos/coaches.mp4", price: "£39.99 monthly · £95.99 for 3 months · £287.93 yearly", intro: "Access all three programmes with unlimited programme changes, giving you the freedom to adapt your training as your goals evolve.", points: ["OUTRUN, OUTLIFT and OUTPERFORM included", "Unlimited programme changes", "Save 40% with the yearly plan"] },
+  { id: "auric-sub60", kicker: "Time-efficient hybrid programme", title: "AURIC SUB60", video: "/videos/alex-row.mp4", price: "£19.99 per month", intro: "A time-efficient version of OUTPERFORM, with every session designed to be completed in 60 minutes or less.", points: ["Build strength and maximise running performance", "Every session completed in 60 minutes or less", "Programmed by Royal Marine PTIs"] },
+  { id: "auric-rehab", kicker: "Online or in person · Location dependent", title: "AURIC REHAB", video: "/videos/box.mp4", price: "£180 initial month · £120 per month ongoing", intro: "A physiotherapy consultation followed by a bespoke, injury-specific training programme.", points: ["Online or in-person physiotherapy consultation", "Bespoke injury-specific exercise programme", "Bi-weekly reviews during ongoing rehabilitation"] },
+];
+
+const coachingOffers = [
+  { title: "12-Week 1:1 Coaching", price: "£550 upfront or £50 per week", copy: "A fully personalised training and performance coaching service, designed around your goals, schedule, lifestyle and performance demands.", points: ["Fully personalised training programme delivered through FITR", "Habit tracking, sleep optimisation and nutrition guidance", "Weekly check-ins and ongoing programme adjustments", "24/7 coach contact with a response within 24 hours"] },
+  { title: "The Auric Athlete", price: "£100 weekly · £400 monthly · £1,000 for 3 months · £2,880 yearly", copy: "The complete 1:1 coaching service, built around your goals, needs and constraints, with guidance across every area that drives performance.", featured: true, points: ["Fully personalised training delivered through FITR", "Injury prevention and rehabilitation", "60-minute workout pathway", "Habit, sleep and nutrition guidance", "Weekly check-ins and 24/7 coach contact", "Ongoing programme adjustments", "One sponsored event every 12 months after a minimum of 3 months’ training", "Save 40% with the yearly plan"] },
 ];
 
 export default function ProgrammesPage() {
-  return (
-    <main>
-      <section className="page-hero">
-        <div className="wrap">
-          <div className="kicker">Programmes</div>
-          <h1 className="display">
-            Train with intent. <span>Nothing extra.</span>
-          </h1>
-          <p className="lead">
-            Five coaching programmes. Choose the route that matches your
-            experience, then get on with the work.
-          </p>
-        </div>
-      </section>
-
-      <section className="wrap program-list" id="plans">
-        <aside className="notice-bar">
-          <div>
-            <div className="kicker">Coaching update</div>
-            <h3>Current programme spaces are full</h3>
-            <p>
-              New coaching spaces will open soon. Compare the programmes below,
-              then book a call or register your interest.
-            </p>
-          </div>
-          <Link href="/contact" className="btn btn-gold">
-            Register interest
-          </Link>
-        </aside>
-
-        {programmes.map((programme) => (
-          <article className="program-row" id={programme.id} key={programme.id}>
-            <div className="program-visual">
-              <LoopVideo src={programme.video} />
-            </div>
-            <div className="program-copy">
-              <div className="kicker">{programme.kicker}</div>
-              <h2>{programme.title}</h2>
-              <p className="price-note">{programme.price}</p>
-              <p>{programme.intro}</p>
-              <ul>
-                {programme.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-              <p className="price-note">Currently full · more spaces soon</p>
-              <Link href="/contact" className="btn btn-gold">
-                Register interest
-              </Link>
-            </div>
-          </article>
-        ))}
-
-        <aside className="notice-bar">
-          <div>
-            <div className="kicker">12 week coaching guarantee</div>
-            <h3>Show up. Check in. Back yourself.</h3>
-            <p>
-              All 12-week coaching programmes paid upfront include a money-back
-              guarantee. Complete the 12 weeks, show up to your workouts, check
-              in every week. If you are not happy after 12 weeks, your upfront
-              coaching fee will be refunded.
-            </p>
-          </div>
-          <Link href="/contact" className="btn">
-            Enquire
-          </Link>
-        </aside>
-      </section>
-    </main>
-  );
+  return <main>
+    <section className="page-hero"><div className="wrap"><div className="kicker">Programmes</div><h1 className="display">OUTRUN:OUTLIFT:<span>OUTPERFORM</span></h1><p className="lead">The old version of you. Choose focused hybrid programming, rehabilitation or fully personalised performance coaching.</p></div></section>
+    <section className="wrap program-list" id="plans">
+      <aside className="notice-bar"><div><div className="kicker">How the programmes work</div><h3>Start at Day 1, Week 1</h3><p>Every programme is delivered in a 12-week block. Week 1 is your testing week, followed by 10 weeks of structured training. In Week 12, you’ll repeat the initial testing battery to measure your progress before moving into your next training block.</p></div><Link href="/contact" className="btn btn-gold">Start training</Link></aside>
+      {programmes.map((programme) => <article className="program-row" id={programme.id} key={programme.id}><div className="program-visual"><LoopVideo src={programme.video} /></div><div className="program-copy"><div className="kicker">{programme.kicker}</div><h2>{programme.title}</h2><p className="price-note">{programme.price}</p><p>{programme.intro}</p><ul>{programme.points.map((point) => <li key={point}>{point}</li>)}</ul><Link href="/contact" className="btn btn-gold">Enquire now</Link></div></article>)}
+    </section>
+    <section className="wrap offer-section" id="coaching"><div className="section-head"><div className="kicker">1:1 coaching</div><h2 className="plans-title">Built around you</h2><p>OUTRUN:OUTLIFT:OUTPERFORM the old version of you.</p></div><div className="coaching-offer-grid">{coachingOffers.map((offer) => <article className={`offer-card${offer.featured ? " is-featured" : ""}`} key={offer.title}>{offer.featured && <span className="offer-stamp">Complete coaching</span>}<div className="kicker">Personal performance coaching</div><h3>{offer.title}</h3><span className="offer-price">{offer.price}</span><p>{offer.copy}</p><ul>{offer.points.map((point) => <li key={point}>{point}</li>)}</ul><Link href="/contact" className="btn btn-gold">Book a call</Link></article>)}</div></section>
+  </main>;
 }
