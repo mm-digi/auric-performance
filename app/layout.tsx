@@ -37,6 +37,13 @@ export const metadata: Metadata = {
     description:
       "OUTRUN:OUTLIFT:OUTPERFORM the old version of you.",
     type: "website",
+    images: [{ url: "/og.png", width: 1792, height: 1024, alt: "OUTRUN:OUTLIFT:OUTPERFORM — The old version of you." }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Auric Performance | Physical Performance Coaching",
+    description: "OUTRUN:OUTLIFT:OUTPERFORM the old version of you.",
+    images: ["/og.png"],
   },
 };
 
