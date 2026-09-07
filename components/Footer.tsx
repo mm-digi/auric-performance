@@ -17,8 +17,8 @@ export default function Footer() {
               </span>
             </Link>
             <p style={{ marginTop: 18, maxWidth: 420 }}>
-              OUTRUN:OUTLIFT:OUTPERFORM the old version of you. Hybrid
-              programming, rehabilitation and personalised coaching.
+              Evidence-informed performance coaching for people who want
+              strength, endurance, work capacity and measurable progress.
             </p>
             <div className="socials">
               <a
@@ -67,10 +67,10 @@ export default function Footer() {
                 <Link href="/programmes">Programmes</Link>
               </li>
               <li>
-                <Link href="/programmes#rehab">Rehabilitation</Link>
+                <Link href="/programmes#plans">Plans</Link>
               </li>
               <li>
-                <Link href="/programmes#coaching">1:1 Coaching</Link>
+                <Link href="/store">Store</Link>
               </li>
               <li>
                 <Link href="/contact">Contact</Link>
@@ -89,23 +89,13 @@ export default function Footer() {
               <li>
                 <Link href="/contact">Book a call with Alex or Courtney</Link>
               </li>
-              <li>
-                <a href="https://app.fitr.training/t/AuricPerformance/" target="_blank" rel="noreferrer">Training app</a>
-              </li>
             </ul>
           </div>
         </div>
 
-        <div className="footer-legal">
-          <Link href="/privacy-policy">Privacy</Link>
-          <Link href="/cookie-policy">Cookies</Link>
-          <Link href="/terms-and-conditions">Terms</Link>
-          <Link href="/refund-policy">Cancellation & refunds</Link>
-          <Link href="/training-disclaimer">Training disclaimer</Link>
-        </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Auric Performance. All rights reserved.</span>
-          <span>Powered by MM Digital</span>
+          <span>United Kingdom</span>
         </div>
       </div>
     </footer>
