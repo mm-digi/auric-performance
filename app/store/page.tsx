@@ -14,8 +14,8 @@ const products = [
     title: "Nutrition Plan",
     price: "£250",
     copy: "A personalised Auric nutrition plan, built around your training, schedule and goal.",
-    image: "/images/store-nutrition.jpg",
-    alt: "High-protein meal in a black and gold bowl",
+    image: "/images/store-real-01.jpg",
+    alt: "Auric Performance coaches running outdoors",
   },
   {
     featured: false,
@@ -23,8 +23,8 @@ const products = [
     title: "Guide To Recovery",
     price: "£50",
     copy: "How to recover properly so the work you put in actually sticks.",
-    image: "/images/store-recovery.jpg",
-    alt: "Foam roller, towel and recovery drink on a gym bench",
+    image: "/images/store-real-02.jpg",
+    alt: "Auric Performance coaches training together outdoors",
   },
   {
     featured: false,
@@ -32,8 +32,8 @@ const products = [
     title: "The Eating Out Guide",
     price: "£80",
     copy: "Stay on track without living in a Tupperware box.",
-    image: "/images/store-eating.jpg",
-    alt: "Steak and salad at a dark restaurant table",
+    image: "/images/store-real-03.jpg",
+    alt: "Auric Performance coach carrying a sandbag",
   },
   {
     featured: true,
@@ -41,8 +41,8 @@ const products = [
     title: "Human Performance Optimisation",
     price: "£250",
     copy: "The Auric approach to sleep, load, fuel and output — in one resource.",
-    image: "/images/store-hpo.jpg",
-    alt: "Stopwatch, notebook and training shoes",
+    image: "/images/store-real-04.jpg",
+    alt: "Auric Performance coach carrying dumbbells outdoors",
   },
   {
     featured: false,
@@ -50,8 +50,8 @@ const products = [
     title: "Mobility And Flexibility Plan",
     price: "£180",
     copy: "Move better, lift better, stay available for the work that matters.",
-    image: "/images/store-mobility.jpg",
-    alt: "Yoga mat, resistance bands and water bottle",
+    image: "/images/store-real-05.jpg",
+    alt: "Auric Performance coach lifting a training log",
   },
   {
     featured: false,
@@ -59,8 +59,8 @@ const products = [
     title: "Lack Of Time Workouts",
     price: "£120",
     copy: "Short, structured sessions for weeks when the diary is full.",
-    image: "/images/store-time.jpg",
-    alt: "Kettlebell and timer on a gym floor",
+    image: "/images/store-real-06.jpg",
+    alt: "Auric Performance coach training with a tyre",
   },
   {
     featured: true,
@@ -68,8 +68,8 @@ const products = [
     title: "Minimal Kit Workouts",
     price: "£120",
     copy: "Train properly when equipment is limited, at home or on the road.",
-    image: "/images/store-minimal.jpg",
-    alt: "A single dumbbell on a wooden floor",
+    image: "/images/store-real-07.jpg",
+    alt: "Auric Performance coaches training with a barbell outdoors",
   },
 ];
 
@@ -77,7 +77,7 @@ export default function StorePage() {
   return (
     <main>
       <section className="page-hero store-hero">
-        <img src="/images/store-hpo.jpg" alt="" />
+        <img src="/images/store-real-05.jpg" alt="" />
         <div className="wrap">
           <div className="kicker">Store</div>
           <h1 className="display">
