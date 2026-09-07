@@ -1128,6 +1128,35 @@ button {
   color: var(--gold);
 }
 
+.privacy-policy {
+  max-width: 900px;
+  padding-bottom: 96px;
+}
+
+.privacy-policy > section {
+  padding: 26px 0;
+  border-bottom: 1px solid rgba(232, 228, 219, 0.1);
+}
+
+.privacy-policy > section h2 {
+  margin: 0 0 10px;
+  font-family: var(--title);
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.privacy-policy > section p {
+  margin: 0;
+  color: rgba(232, 228, 219, 0.74);
+  line-height: 1.75;
+}
+
+.privacy-policy .contact-card {
+  margin-top: 40px;
+}
+
 /* Footer */
 .footer {
   padding: 64px 0 28px;
@@ -1175,6 +1204,12 @@ button {
   gap: 16px;
   color: rgba(232, 228, 219, 0.42);
   font-size: 12px;
+}
+
+.footer-meta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .socials {

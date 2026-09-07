@@ -95,7 +95,13 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Auric Performance. All rights reserved.</span>
-          <span>United Kingdom</span>
+          <span className="footer-meta-links">
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <span>·</span>
+            <a href="https://mm-digi.co.uk/" target="_blank" rel="noreferrer">
+              Powered &amp; Secured by MM Digital
+            </a>
+          </span>
         </div>
       </div>
     </footer>
