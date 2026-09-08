@@ -131,7 +131,7 @@ export default function HomePage() {
             <p>
               12-week coaching plans live on the programmes page. Nutrition,
               recovery, mobility and workout resources live in the store. No
-              extra pages, no extra noise.
+              extra pages, no extra noise.
             </p>
           </div>
           <div className="actions">

@@ -333,6 +333,7 @@ button {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(232, 228, 219, 0.58);
+  white-space: nowrap;
 }
 
 /* Sections */
@@ -1365,6 +1366,15 @@ button {
 @media (max-width: 640px) {
   .wrap {
     width: calc(100% - 32px);
+  }
+
+  .hero .display {
+    font-size: clamp(38px, 11vw, 48px);
+  }
+
+  .hero-note {
+    font-size: clamp(8.5px, 2.65vw, 11px);
+    letter-spacing: 0.08em;
   }
 
   .programme-intro-line { white-space: normal; }
