@@ -35,6 +35,9 @@ const posts = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((entry) => entr
   };
 }).filter(Boolean).sort((a, b) => wanted.indexOf(a.slug) - wanted.indexOf(b.slug));
 
+const monthlyDates = ["2nd September 2026", "2nd August 2026", "2nd July 2026", "2nd June 2026", "2nd May 2026", "2nd April 2026", "2nd March 2026"];
+posts.forEach((post, index) => { post.date = monthlyDates[index]; });
+
 writeFileSync(resolve("app", "blog", "posts.ts"), `export type BlogPost = { slug: string; title: string; description: string; category: string; readTime: string; date: string; image: string; body: string; };\n\nexport const posts: BlogPost[] = ${JSON.stringify(posts, null, 2)};\n\nexport function getPost(slug: string) { return posts.find((post) => post.slug === slug); }\n`);
 console.log(`Imported ${posts.length} WordPress articles.`);
 
