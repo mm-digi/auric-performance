@@ -13,7 +13,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = getPost((await params).slug);
   if (!post) notFound();
   return <main><article>
-    <header className="blog-post-hero"><Image src={post.image} alt="" fill priority sizes="100vw" /><div className="blog-post-shade" /><div className="wrap blog-post-heading"><div className="kicker">{post.category} · {post.readTime} · {post.date}</div><h1>{post.title}</h1><p>{post.description}</p></div></header>
+    <header className={`blog-post-hero blog-post-hero--${post.slug}`}><Image src={post.image} alt="" fill priority sizes="100vw" /><div className="blog-post-shade" /><div className="wrap blog-post-heading"><div className="kicker">{post.category} · {post.readTime} · {post.date}</div><h1>{post.title}</h1><p>{post.description}</p></div></header>
     <section className="section"><div className="blog-article" dangerouslySetInnerHTML={{ __html: post.body }} /><div className="blog-back"><Link href="/blog" className="btn">← All articles</Link><Link href="/contact" className="btn btn-gold">Ask about coaching</Link></div></section>
   </article></main>;
 }

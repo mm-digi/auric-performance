@@ -1259,6 +1259,8 @@ button {
 .text-link { color: var(--gold); font-family: var(--sub); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 700; }
 .blog-post-hero { min-height: 680px; position: relative; display: flex; align-items: end; }
 .blog-post-hero > img { object-fit: cover; }
+.blog-post-hero--how-to-prepare-for-selection-without-burning-out > img { object-position: center 38%; }
+.blog-post-hero--return-to-training-after-injury-a-smarter-starting-point > img { object-position: center 25%; }
 .blog-post-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,13,12,.25), rgba(14,13,12,.96)); }
 .blog-post-heading { position: relative; z-index: 1; padding-bottom: 72px; }
 .blog-post-heading h1 { max-width: 1050px; font-family: var(--title); font-size: clamp(52px, 7vw, 100px); line-height: .9; text-transform: uppercase; font-weight: 400; margin: 18px 0; }

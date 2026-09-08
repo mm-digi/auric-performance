@@ -57,12 +57,12 @@ export default function ContactPage() {
             <div className="contact-person">
               <Image
                 src="/images/courtney.jpg"
-                alt="Courtney"
+                alt="Courtney Alexander"
                 width={400}
                 height={280}
               />
               <div>
-                <strong>Courtney</strong>
+                <strong>Courtney Alexander</strong>
                 <span>Co-founder</span>
               </div>
             </div>
