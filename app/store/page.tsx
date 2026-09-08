@@ -40,7 +40,7 @@ const products = [
     meta: "Performance resource",
     title: "Human Performance Optimisation",
     price: "£250",
-    copy: "The Auric approach to sleep, load, fuel and output — in one resource.",
+    copy: "The Auric approach to sleep, load, fuel and output, all in one resource.",
     image: "/images/store-real-04.jpg",
     alt: "Auric Performance coach carrying dumbbells outdoors",
   },
