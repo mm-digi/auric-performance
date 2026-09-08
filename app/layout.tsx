@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     template: "%s | Auric Performance",
   },
   description:
-    "OUTRUN:OUTLIFT:OUTPERFORM the old version of you. Hybrid training, rehabilitation and personalised coaching by Royal Marine PTIs.",
+    "OUTRUN : OUTLIFT : OUTPERFORM the old version of you. Hybrid training, rehabilitation and personalised coaching by Royal Marine PTIs.",
   metadataBase: new URL("https://auric-performance-ten.vercel.app"),
   openGraph: {
     title: "Auric Performance | Physical Performance Coaching",
     description:
-      "OUTRUN:OUTLIFT:OUTPERFORM the old version of you.",
+    "OUTRUN : OUTLIFT : OUTPERFORM the old version of you.",
     type: "website",
   },
 };

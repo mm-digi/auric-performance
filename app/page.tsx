@@ -17,7 +17,7 @@ export default function HomePage() {
             <span className="hero-line">physical performance</span>
           </h1>
           <p className="lead">
-            OUTRUN:OUTLIFT:OUTPERFORM the old version of you. Build strength,
+            OUTRUN : OUTLIFT : OUTPERFORM the old version of you. Build strength,
             improve your running and become a more complete athlete with
             programming by Royal Marine PTIs.
           </p>
@@ -78,14 +78,14 @@ export default function HomePage() {
             <figure className="coach-card">
               <Image
                 src="/images/courtney.jpg"
-                alt="Courtney, co-founder of Auric Performance"
+                alt="Courtney Alexander, co-founder of Auric Performance"
                 fill
                 sizes="(max-width: 980px) 100vw, 50vw"
                 style={{ objectFit: "cover", objectPosition: "center 18%" }}
               />
               <figcaption>
                 <span className="role">Co-founder · Coach</span>
-                <h3>Courtney</h3>
+                <h3>Courtney Alexander</h3>
                 <p>
                   Hybrid performance, running and physical capability. Training
                   that is structured, repeatable and built to last.
