@@ -73,6 +73,9 @@ export default function Footer() {
                 <Link href="/blog">Blog</Link>
               </li>
               <li>
+                <a href="https://app.fitr.training/t/AuricPerformance/" target="_blank" rel="noreferrer">Training App</a>
+              </li>
+              <li>
                 <Link href="/contact">Contact</Link>
               </li>
             </ul>
@@ -97,6 +100,10 @@ export default function Footer() {
           <span>© {new Date().getFullYear()} Auric Performance. All rights reserved.</span>
           <span className="footer-meta-links">
             <Link href="/privacy-policy">Privacy Policy</Link>
+            <span>·</span>
+            <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+            <span>·</span>
+            <Link href="/cookie-policy">Cookie Policy</Link>
             <span>·</span>
             <a href="https://mm-digi.co.uk/" target="_blank" rel="noreferrer">
               Powered &amp; Secured by MM Digital

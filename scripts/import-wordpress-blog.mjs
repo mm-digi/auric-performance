@@ -37,3 +37,17 @@ const posts = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((entry) => entr
 
 writeFileSync(resolve("app", "blog", "posts.ts"), `export type BlogPost = { slug: string; title: string; description: string; category: string; readTime: string; date: string; image: string; body: string; };\n\nexport const posts: BlogPost[] = ${JSON.stringify(posts, null, 2)};\n\nexport function getPost(slug: string) { return posts.find((post) => post.slug === slug); }\n`);
 console.log(`Imported ${posts.length} WordPress articles.`);
+
+const legalSlugs = ["terms-and-conditions", "cookie-policy"];
+const legalPages = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((entry) => entry[1]).map((item) => {
+  const slug = match(item, /<wp:post_name[^>]*>([\s\S]*?)<\/wp:post_name>/);
+  if (!legalSlugs.includes(slug)) return null;
+  const content = match(item, /<content:encoded[^>]*>([\s\S]*?)<\/content:encoded>/);
+  const body = content.match(/<div class="ap-policy-content(?: ap-reveal)?">([\s\S]*?)<\/div>\s*<\/div>\s*<\/div>\s*<\/section>/)?.[1]
+    .replace("[cmplz-manage-consent]", "")
+    .replaceAll('https://auricperformance.co.uk/privacy-policy/', '/privacy-policy')
+    .replaceAll('https://auricperformance.co.uk/cookie-policy/', '/cookie-policy') ?? "";
+  return { slug, body };
+}).filter(Boolean);
+writeFileSync(resolve("app", "legal-pages.ts"), `export const legalPages = ${JSON.stringify(legalPages, null, 2)};\nexport function getLegalPage(slug: string) { return legalPages.find((page) => page.slug === slug); }\n`);
+console.log(`Imported ${legalPages.length} legal pages.`);
