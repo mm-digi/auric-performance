@@ -14,6 +14,7 @@ export default function SignupPopup() {
   const dialogRef = useRef<HTMLElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const lastFocusedRef = useRef<HTMLElement | null>(null);
+  const submissionPendingRef = useRef(false);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -51,6 +52,11 @@ export default function SignupPopup() {
   };
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     if (!event.currentTarget.checkValidity()) return;
+    submissionPendingRef.current = true;
+  };
+  const onMailchimpResponse = () => {
+    if (!submissionPendingRef.current) return;
+    submissionPendingRef.current = false;
     try { localStorage.setItem(SUBSCRIBED_KEY, "true"); } catch {}
     setSubmitted(true);
   };
@@ -71,6 +77,6 @@ export default function SignupPopup() {
         </div>}</div>
       </section>
     </div>
-    <iframe name="ap-mailchimp-submit" title="Mailchimp form submission" hidden />
+    <iframe name="ap-mailchimp-submit" title="Mailchimp form submission" hidden onLoad={onMailchimpResponse} />
   </>;
 }
