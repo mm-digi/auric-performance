@@ -388,6 +388,12 @@ button {
   background: var(--ink);
 }
 
+@media (min-width: 981px) {
+  .coaches .split-head {
+    gap: 18px;
+  }
+}
+
 .coach-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
