@@ -11,7 +11,7 @@
   --sub: "Oswald", Arial, sans-serif;
   --body: "Inter", Arial, sans-serif;
   --max: 1320px;
-  --header: 88px;
+  --header: 112px;
 }
 
 * {
@@ -153,8 +153,8 @@ button {
 }
 
 .brand img {
-  width: 54px;
-  height: 54px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
 }
 

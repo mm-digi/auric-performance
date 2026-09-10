@@ -21,8 +21,8 @@ export default function Header() {
           <Image
             src="/images/logo-au3.png"
             alt="Auric Performance"
-            width={54}
-            height={54}
+            width={80}
+            height={80}
             priority
           />
           <span className="brand-text">

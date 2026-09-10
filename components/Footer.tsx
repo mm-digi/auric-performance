@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer-inner">
           <div>
             <Link href="/" className="brand">
-              <Image src="/images/logo-au3.png" alt="" width={54} height={54} />
+              <Image src="/images/logo-au3.png" alt="" width={80} height={80} />
               <span className="brand-text">
                 <strong>
                   Auric <span>Performance</span>
