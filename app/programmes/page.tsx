@@ -103,7 +103,6 @@ const coachingOffers: Array<{
   kicker: string;
   copy: string;
   featured?: boolean;
-  stamp?: string;
   points: string[];
 }> = [
   {
@@ -122,7 +121,6 @@ const coachingOffers: Array<{
     kicker: "Personal performance coaching",
     copy: "The complete 1:1 coaching service, built around your goals, needs and constraints, with guidance across every area that drives performance.",
     featured: true,
-    stamp: "Complete coaching",
     points: [
       "Fully personalised training delivered through FITR",
       "Injury prevention and rehabilitation",
@@ -139,7 +137,6 @@ const coachingOffers: Array<{
     title: "Auric Rehab",
     kicker: "Standalone 1:1 package",
     copy: "A physiotherapy consultation followed by a bespoke, injury-specific training programme. Book a call to start. This package is not sold through FITR.",
-    stamp: "Book a call",
     points: [
       "Online or in-person physiotherapy consultation",
       "Bespoke injury-specific exercise programme",
@@ -252,7 +249,6 @@ export default function ProgrammesPage() {
               id={offer.id}
               key={offer.title}
             >
-              {offer.stamp && <span className="offer-stamp">{offer.stamp}</span>}
               <div className="kicker">{offer.kicker}</div>
               <h3>{offer.title}</h3>
               <p>{offer.copy}</p>
