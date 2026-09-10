@@ -153,8 +153,8 @@ button {
 }
 
 .brand img {
-  width: 46px;
-  height: 46px;
+  width: 54px;
+  height: 54px;
   object-fit: contain;
 }
 
@@ -165,7 +165,7 @@ button {
 
 .brand-text strong {
   font-family: var(--title);
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 400;
   letter-spacing: 0.06em;
 }
@@ -303,6 +303,11 @@ button {
 .hero .hero-line {
   display: block;
   white-space: nowrap;
+  color: var(--cream);
+}
+
+.hero .hero-line span {
+  color: var(--gold);
 }
 
 .hero .lead,
@@ -313,6 +318,7 @@ button {
   min-width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  font-size: 14px;
 }
 
 .hero .lead {
@@ -475,7 +481,7 @@ button {
 
 .program-story {
   position: relative;
-  height: 450vh;
+  height: 630vh;
 }
 
 .program-story-sticky {
@@ -1032,6 +1038,11 @@ button {
   line-height: 1.6;
 }
 
+.notice-bar-blue {
+  border-color: rgba(61, 92, 114, 0.55);
+  background: rgba(61, 92, 114, 0.18);
+}
+
 /* Contact */
 .contact-grid {
   display: grid;
@@ -1457,7 +1468,7 @@ button {
   }
 
   .program-story {
-    height: 400vh;
+    height: 560vh;
   }
 
   .program-story-text {

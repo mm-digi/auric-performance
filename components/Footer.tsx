@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer-inner">
           <div>
             <Link href="/" className="brand">
-              <Image src="/images/logo.png" alt="" width={46} height={46} />
+              <Image src="/images/logo-au3.png" alt="" width={54} height={54} />
               <span className="brand-text">
                 <strong>
                   Auric <span>Performance</span>
@@ -65,12 +65,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/programmes">Programmes</Link>
-              </li>
-              <li>
-                <Link href="/store">Store</Link>
-              </li>
-              <li>
-                <Link href="/blog">Blog</Link>
               </li>
               <li>
                 <a href="https://app.fitr.training/t/AuricPerformance/" target="_blank" rel="noreferrer">Training App</a>

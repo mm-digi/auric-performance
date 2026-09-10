@@ -13,13 +13,13 @@ export default function HomePage() {
           <div className="hero-copy">
           <div className="kicker">Auric Performance</div>
           <h1 className="display">
-            <span className="hero-line">The gold standard in</span>
+            <span className="hero-line">
+              The <span>GOLD</span> standard in
+            </span>
             <span className="hero-line">physical performance</span>
           </h1>
           <p className="lead">
-            OUTRUN : OUTLIFT : OUTPERFORM the old version of you. Build strength,
-            improve your running and become a more complete athlete with
-            programming by Royal Marine PTIs.
+            OUTRUN : OUTLIFT : OUTPERFORM The old version of you.
           </p>
           <div className="actions">
             <Link href="/contact" className="btn btn-gold">
@@ -30,7 +30,7 @@ export default function HomePage() {
             </Link>
           </div>
           <p className="hero-note">
-            Strength · Endurance · Work capacity · Measurable progress
+            Power · Strength · Endurance · Resilience
           </p>
           </div>
         </div>
@@ -119,31 +119,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="wrap">
-          <div className="split-head">
-            <div>
-              <div className="kicker">Store and plans</div>
-              <h2 className="display" style={{ fontSize: "clamp(42px, 6vw, 76px)", marginTop: 8 }}>
-                Coaching plans and standalone resources
-              </h2>
-            </div>
-            <p>
-              12-week coaching plans live on the programmes page. Nutrition,
-              recovery, mobility and workout resources live in the store. No
-              extra pages, no extra noise.
-            </p>
-          </div>
-          <div className="actions">
-            <Link href="/programmes#plans" className="btn btn-gold">
-              View plans
-            </Link>
-            <Link href="/store" className="btn">
-              Visit the store
-            </Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

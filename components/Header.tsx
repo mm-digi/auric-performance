@@ -8,8 +8,6 @@ import { useState } from "react";
 const links = [
   { href: "/", label: "Home" },
   { href: "/programmes", label: "Programmes" },
-  { href: "/store", label: "Store" },
-  { href: "/blog", label: "Blog" },
 ];
 
 export default function Header() {
@@ -21,10 +19,10 @@ export default function Header() {
       <div className="wrap header-inner">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
           <Image
-            src="/images/logo.png"
+            src="/images/logo-au3.png"
             alt="Auric Performance"
-            width={46}
-            height={46}
+            width={54}
+            height={54}
             priority
           />
           <span className="brand-text">
