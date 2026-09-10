@@ -138,7 +138,7 @@ const coachingOffers: Array<{
     id: "auric-rehab",
     title: "Auric Rehab",
     kicker: "Standalone 1:1 package",
-    copy: "A physiotherapy consultation followed by a bespoke, injury-specific training programme. Book a call to start — this package is not sold through FITR.",
+    copy: "A physiotherapy consultation followed by a bespoke, injury-specific training programme. Book a call to start. This package is not sold through FITR.",
     stamp: "Book a call",
     points: [
       "Online or in-person physiotherapy consultation",
@@ -242,7 +242,7 @@ export default function ProgrammesPage() {
           <h2 className="plans-title">Built around you</h2>
           <p>
             Two personalised 1:1 coaching options, plus Auric Rehab as a standalone 1:1 package.
-            Rehab is booked on a call — there is no FITR checkout for that package.
+            Rehab is booked on a call. There is no FITR checkout for that package.
           </p>
         </div>
         <div className="coaching-offer-grid">
