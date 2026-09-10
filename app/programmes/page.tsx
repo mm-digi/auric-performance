@@ -110,7 +110,7 @@ const coachingOffers: Array<{
     kicker: "Personal performance coaching",
     copy: "A fully personalised training and performance coaching service, designed around your goals, schedule, lifestyle and performance demands.",
     points: [
-      "Fully personalised training programme delivered through FITR",
+      "Fully personalised training programme",
       "Habit tracking, sleep optimisation and nutrition guidance",
       "Weekly check-ins and ongoing programme adjustments",
       "24/7 coach contact with a response within 24 hours",
@@ -122,7 +122,7 @@ const coachingOffers: Array<{
     copy: "The complete 1:1 coaching service, built around your goals, needs and constraints, with guidance across every area that drives performance.",
     featured: true,
     points: [
-      "Fully personalised training delivered through FITR",
+      "Fully personalised training",
       "Injury prevention and rehabilitation",
       "60-minute workout pathway",
       "Habit, sleep and nutrition guidance",
@@ -136,7 +136,7 @@ const coachingOffers: Array<{
     id: "auric-rehab",
     title: "Auric Rehab",
     kicker: "Standalone 1:1 package",
-    copy: "A physiotherapy consultation followed by a bespoke, injury-specific training programme. Book a call to start. This package is not sold through FITR.",
+    copy: "A physiotherapy consultation followed by a bespoke, injury-specific training programme. Book a call to start.",
     points: [
       "Online or in-person physiotherapy consultation",
       "Bespoke injury-specific exercise programme",
@@ -239,7 +239,7 @@ export default function ProgrammesPage() {
           <h2 className="plans-title">Built around you</h2>
           <p>
             Two personalised 1:1 coaching options, plus Auric Rehab as a standalone 1:1 package.
-            Rehab is booked on a call. There is no FITR checkout for that package.
+            Rehab is booked on a call.
           </p>
         </div>
         <div className="coaching-offer-grid">
