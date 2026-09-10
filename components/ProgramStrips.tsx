@@ -7,7 +7,7 @@ const programmes = [
   {
     href: "/programmes#coaching",
     title: "1:1 COACHING",
-    copy: "Fully personalised training built around your goals, schedule and performance demands.",
+    copy: "Fully personalised 1:1 coaching, including rehab and return to capability.",
     video: "/videos/coaches.mp4",
   },
   {
@@ -31,20 +31,14 @@ const programmes = [
   {
     href: "/programmes#complete-package",
     title: "THE COMPLETE PACKAGE",
-    copy: "Access OUTRUN, OUTLIFT and OUTPERFORM with unlimited programme changes.",
+    copy: "OUTRUN, OUTLIFT, OUTPERFORM and AURIC SUB60, with unlimited programme changes.",
     video: "/videos/lift.mp4",
   },
   {
     href: "/programmes#auric-sub60",
     title: "AURIC SUB60",
-    copy: "Stronger, faster and more capable in 60 minutes or less.",
+    copy: "60-minute sessions. £19.99 standalone, or included with OUTRUN : OUTLIFT : OUTPERFORM.",
     video: "/videos/alex-row.mp4",
-  },
-  {
-    href: "/programmes#auric-rehab",
-    title: "AURIC REHAB",
-    copy: "A physiotherapy consultation followed by a bespoke, injury-specific training programme.",
-    video: "/videos/bike.mp4",
   },
 ];
 

@@ -70,10 +70,12 @@ const programmes: Programme[] = [
     title: "OUTRUN : OUTLIFT : OUTPERFORM",
     video: "/videos/coaches.mp4",
     price: "£39.99 monthly · £95.99 for 3 months · £287.93 yearly",
+    url: "https://app.fitr.training/pa/outrunoutliftoutperform",
     intro:
-      "Access all three programmes with unlimited programme changes, giving you the freedom to adapt your training as your goals evolve.",
+      "Access OUTRUN, OUTLIFT and OUTPERFORM with unlimited programme changes. AURIC SUB60 is included with this package.",
     points: [
       "OUTRUN, OUTLIFT and OUTPERFORM included",
+      "AURIC SUB60 included",
       "Unlimited programme changes",
       "Save 40% with the yearly plan",
     ],
@@ -83,26 +85,14 @@ const programmes: Programme[] = [
     kicker: "Time-efficient hybrid programme",
     title: "AURIC SUB60",
     video: "/videos/alex-row.mp4",
-    price: "£29.99 per month",
+    price: "£19.99 per month",
     intro:
-      "A time-efficient version of OUTPERFORM, with every session designed to be completed in 60 minutes or less.",
+      "A time-efficient version of OUTPERFORM, with every session designed to be completed in 60 minutes or less. Buy it standalone, or get it included with OUTRUN : OUTLIFT : OUTPERFORM.",
     points: [
       "Build strength and maximise running performance",
       "Every session completed in 60 minutes or less",
+      "Included with OUTRUN : OUTLIFT : OUTPERFORM",
       "Programmed by Royal Marine PTIs",
-    ],
-  },
-  {
-    id: "auric-rehab",
-    kicker: "Online or in person · Location dependent",
-    title: "AURIC REHAB",
-    video: "/videos/bike.mp4",
-    price: "£180 initial month · £120 per month ongoing",
-    intro: "A physiotherapy consultation followed by a bespoke, injury-specific training programme.",
-    points: [
-      "Online or in-person physiotherapy consultation",
-      "Bespoke injury-specific exercise programme",
-      "Bi-weekly reviews during ongoing rehabilitation",
     ],
   },
 ];
@@ -115,9 +105,10 @@ const coachingOffers: Array<{
 }> = [
   {
     title: "12-Week 1:1 Coaching",
-    copy: "A fully personalised training and performance coaching service, designed around your goals, schedule, lifestyle and performance demands.",
+    copy: "Auric Rehab is our 1:1 coaching. A fully personalised training and performance service, including rehabilitation and return to capability where you need it.",
     points: [
       "Fully personalised training programme delivered through FITR",
+      "Rehabilitation and return to capability support",
       "Habit tracking, sleep optimisation and nutrition guidance",
       "Weekly check-ins and ongoing programme adjustments",
       "24/7 coach contact with a response within 24 hours",
@@ -206,9 +197,21 @@ export default function ProgrammesPage() {
                   Start programme
                 </a>
               ) : (
-                <span className="btn is-disabled" aria-disabled="true">
-                  Coming soon
-                </span>
+                <div className="actions">
+                  <span className="btn is-disabled" aria-disabled="true">
+                    Coming soon
+                  </span>
+                  {programme.id === "auric-sub60" && (
+                    <a
+                      href="https://app.fitr.training/pa/outrunoutliftoutperform"
+                      className="btn"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Get it with the complete package
+                    </a>
+                  )}
+                </div>
               )}
             </div>
           </article>
@@ -217,9 +220,12 @@ export default function ProgrammesPage() {
 
       <section className="wrap offer-section" id="coaching">
         <div className="section-head">
-          <div className="kicker">1:1 coaching</div>
+          <div className="kicker">1:1 coaching · Auric Rehab</div>
           <h2 className="plans-title">Built around you</h2>
-          <p>OUTRUN : OUTLIFT : OUTPERFORM the old version of you.</p>
+          <p>
+            Auric Rehab is our 1:1 coaching — fully personalised training, including rehabilitation
+            and return to capability.
+          </p>
         </div>
         <div className="coaching-offer-grid">
           {coachingOffers.map((offer) => (

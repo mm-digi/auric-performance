@@ -342,6 +342,46 @@ button {
   white-space: nowrap;
 }
 
+.proof-banner {
+  background: var(--ink);
+  border-top: 1px solid rgba(201, 168, 76, 0.22);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.22);
+  padding: 34px 0;
+}
+
+.proof-banner-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: start;
+  text-align: center;
+}
+
+.proof-item strong {
+  display: block;
+  font-family: var(--title);
+  font-size: clamp(32px, 4.2vw, 52px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 0.92;
+  color: var(--gold);
+}
+
+.proof-item span {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--sub);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 219, 0.7);
+}
+
+.proof-reviews:hover strong,
+.proof-reviews:focus-visible strong {
+  color: var(--cream);
+}
+
 /* Sections */
 .section {
   padding: 96px 0;
@@ -481,7 +521,7 @@ button {
 
 .program-story {
   position: relative;
-  height: 630vh;
+  height: 540vh;
 }
 
 .program-story-sticky {
@@ -1357,6 +1397,11 @@ button {
 }
 
 @media (max-width: 980px) {
+  .proof-banner-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 16px;
+  }
+
   .nav,
   .header .btn {
     display: none;
@@ -1468,7 +1513,7 @@ button {
   }
 
   .program-story {
-    height: 560vh;
+    height: 480vh;
   }
 
   .program-story-text {
