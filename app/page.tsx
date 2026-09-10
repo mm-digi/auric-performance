@@ -52,7 +52,7 @@ export default function HomePage() {
           </div>
           <a
             className="proof-item proof-reviews"
-            href="https://www.google.com/maps/search/?api=1&query=Auric+Performance+Hatch+Beauchamp"
+            href="https://g.page/r/CYlQ16bijYP8EBM/review"
             target="_blank"
             rel="noreferrer"
           >
