@@ -47,7 +47,7 @@ export default function HomePage() {
             <span>Came through rehab</span>
           </div>
           <div className="proof-item">
-            <strong>~1 in 3</strong>
+            <strong>1 in 3</strong>
             <span>Return to capability</span>
           </div>
           <a
