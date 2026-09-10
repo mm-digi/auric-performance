@@ -7,8 +7,14 @@ const programmes = [
   {
     href: "/programmes#coaching",
     title: "1:1 COACHING",
-    copy: "Fully personalised 1:1 coaching, including rehab and return to capability.",
+    copy: "Fully personalised training built around your goals, schedule and performance demands.",
     video: "/videos/coaches.mp4",
+  },
+  {
+    href: "/programmes#auric-rehab",
+    title: "AURIC REHAB",
+    copy: "A standalone 1:1 rehab package. Book a call to start.",
+    video: "/videos/bike.mp4",
   },
   {
     href: "/programmes#outrun",

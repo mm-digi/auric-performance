@@ -39,16 +39,12 @@ export default function HomePage() {
       <section className="proof-banner">
         <div className="wrap proof-banner-inner">
           <div className="proof-item">
-            <strong>1,600</strong>
+            <strong>1,600+</strong>
             <span>Clients coached</span>
           </div>
           <div className="proof-item">
-            <strong>1 in 3</strong>
-            <span>From rehab</span>
-          </div>
-          <div className="proof-item">
-            <strong>1 in 3</strong>
-            <span>From return to capability</span>
+            <strong>400+</strong>
+            <span>Rehab clients returned to capability</span>
           </div>
           <a
             className="proof-item proof-reviews"
@@ -57,7 +53,7 @@ export default function HomePage() {
             rel="noreferrer"
           >
             <strong>5 star</strong>
-            <span>Google reviews →</span>
+            <span>Google ratings / reviews →</span>
           </a>
         </div>
       </section>

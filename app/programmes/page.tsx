@@ -98,17 +98,20 @@ const programmes: Programme[] = [
 ];
 
 const coachingOffers: Array<{
+  id?: string;
   title: string;
+  kicker: string;
   copy: string;
   featured?: boolean;
+  stamp?: string;
   points: string[];
 }> = [
   {
     title: "12-Week 1:1 Coaching",
-    copy: "Auric Rehab is our 1:1 coaching. A fully personalised training and performance service, including rehabilitation and return to capability where you need it.",
+    kicker: "Personal performance coaching",
+    copy: "A fully personalised training and performance coaching service, designed around your goals, schedule, lifestyle and performance demands.",
     points: [
       "Fully personalised training programme delivered through FITR",
-      "Rehabilitation and return to capability support",
       "Habit tracking, sleep optimisation and nutrition guidance",
       "Weekly check-ins and ongoing programme adjustments",
       "24/7 coach contact with a response within 24 hours",
@@ -116,8 +119,10 @@ const coachingOffers: Array<{
   },
   {
     title: "The Auric Athlete",
+    kicker: "Personal performance coaching",
     copy: "The complete 1:1 coaching service, built around your goals, needs and constraints, with guidance across every area that drives performance.",
     featured: true,
+    stamp: "Complete coaching",
     points: [
       "Fully personalised training delivered through FITR",
       "Injury prevention and rehabilitation",
@@ -127,6 +132,19 @@ const coachingOffers: Array<{
       "Ongoing programme adjustments",
       "One sponsored event every 12 months after a minimum of 3 months’ training",
       "Save 40% with the yearly plan",
+    ],
+  },
+  {
+    id: "auric-rehab",
+    title: "Auric Rehab",
+    kicker: "Standalone 1:1 package",
+    copy: "A physiotherapy consultation followed by a bespoke, injury-specific training programme. Book a call to start — this package is not sold through FITR.",
+    stamp: "Book a call",
+    points: [
+      "Online or in-person physiotherapy consultation",
+      "Bespoke injury-specific exercise programme",
+      "Bi-weekly reviews during ongoing rehabilitation",
+      "Book a call with Alex or Courtney to get started",
     ],
   },
 ];
@@ -220,21 +238,22 @@ export default function ProgrammesPage() {
 
       <section className="wrap offer-section" id="coaching">
         <div className="section-head">
-          <div className="kicker">1:1 coaching · Auric Rehab</div>
+          <div className="kicker">1:1 coaching</div>
           <h2 className="plans-title">Built around you</h2>
           <p>
-            Auric Rehab is our 1:1 coaching — fully personalised training, including rehabilitation
-            and return to capability.
+            Two personalised 1:1 coaching options, plus Auric Rehab as a standalone 1:1 package.
+            Rehab is booked on a call — there is no FITR checkout for that package.
           </p>
         </div>
         <div className="coaching-offer-grid">
           {coachingOffers.map((offer) => (
             <article
               className={`offer-card${offer.featured ? " is-featured" : ""}`}
+              id={offer.id}
               key={offer.title}
             >
-              {offer.featured && <span className="offer-stamp">Complete coaching</span>}
-              <div className="kicker">Personal performance coaching</div>
+              {offer.stamp && <span className="offer-stamp">{offer.stamp}</span>}
+              <div className="kicker">{offer.kicker}</div>
               <h3>{offer.title}</h3>
               <p>{offer.copy}</p>
               <ul>
