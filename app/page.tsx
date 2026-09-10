@@ -44,11 +44,11 @@ export default function HomePage() {
           </div>
           <div className="proof-item">
             <strong>1 in 3</strong>
-            <span>Came through rehab</span>
+            <span>From rehab</span>
           </div>
           <div className="proof-item">
             <strong>1 in 3</strong>
-            <span>Return to capability</span>
+            <span>From return to capability</span>
           </div>
           <a
             className="proof-item proof-reviews"
