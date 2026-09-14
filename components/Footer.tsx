@@ -17,8 +17,9 @@ export default function Footer() {
               </span>
             </Link>
             <p style={{ marginTop: 18, maxWidth: 420 }}>
-              Evidence-informed performance coaching for people who want
-              strength, endurance, work capacity and measurable progress.
+              Evidence-informed performance coaching engineered for those who
+              demand more from themselves. Helping you build strength, speed,
+              resilience, and lasting athletic capability.
             </p>
             <div className="socials">
               <a

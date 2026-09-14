@@ -453,7 +453,7 @@ button {
 
 .coach-card {
   position: relative;
-  min-height: 680px;
+  min-height: 820px;
   overflow: hidden;
   background: var(--charcoal);
 }
@@ -470,8 +470,8 @@ button {
   position: absolute;
   inset: auto 0 0 0;
   z-index: 1;
-  padding: 28px 28px 32px;
-  background: linear-gradient(180deg, transparent, rgba(14, 13, 12, 0.92));
+  padding: 32px 28px 36px;
+  background: linear-gradient(180deg, transparent, rgba(14, 13, 12, 0.96) 28%);
 }
 
 .coach-card h3 {
@@ -484,8 +484,39 @@ button {
 
 .coach-card p {
   margin: 0;
-  max-width: 420px;
+  max-width: 520px;
   color: rgba(232, 228, 219, 0.78);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.coach-label {
+  margin: 12px 0 4px;
+  font-family: var(--sub);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 219, 0.5);
+}
+
+.coach-specialism {
+  max-width: none;
+  font-family: var(--sub);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  line-height: 1.45;
+}
+
+.coach-quals {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(232, 228, 219, 0.68);
+}
+
+.coach-quote {
+  margin-top: 12px;
   font-size: 15px;
   line-height: 1.55;
 }
@@ -1457,7 +1488,7 @@ button {
   }
 
   .coach-card {
-    min-height: 560px;
+    min-height: 720px;
   }
 
   .program-copy {
@@ -1509,7 +1540,7 @@ button {
   }
 
   .coach-card {
-    min-height: 480px;
+    min-height: 640px;
   }
 
   .program-story {

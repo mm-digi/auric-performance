@@ -90,9 +90,21 @@ export default function HomePage() {
               <figcaption>
                 <span className="role">Co-founder · Coach</span>
                 <h3>Alex Peterson</h3>
-                <p>
-                  Strength, conditioning and standards-based coaching. Built
-                  around your goal, your role and your starting point.
+                <p className="coach-label">Specialist in</p>
+                <p className="coach-specialism">
+                  Strength : Conditioning : Functional Fitness : Rehabilitation
+                </p>
+                <p className="coach-label">Qualifications / assurances</p>
+                <p className="coach-quals">
+                  Royal Marine Physical Training Instructor : DPHC Exercise
+                  Rehabilitation Instructor : FdSc Sports Performance : British
+                  Weightlifting Strength and Power : Optimising Human Performance
+                  LVL 5 : Sports Massage LVL 4
+                </p>
+                <p className="coach-quote">
+                  Turning Experience into performance - helping people build
+                  strength, resilience, and confidence, achieve their goals and
+                  discover what they&apos;re truly capable of.
                 </p>
               </figcaption>
             </figure>
@@ -108,9 +120,21 @@ export default function HomePage() {
               <figcaption>
                 <span className="role">Co-founder · Coach</span>
                 <h3>Courtney Alexander</h3>
-                <p>
-                  Hybrid performance, running and physical capability. Training
-                  that is structured, repeatable and built to last.
+                <p className="coach-label">Specialist in</p>
+                <p className="coach-specialism">
+                  Strength : Conditioning : Hybrid Performance : Rehabilitation
+                </p>
+                <p className="coach-label">Qualifications / assurances</p>
+                <p className="coach-quals">
+                  Royal Marine Physical Training Instructor : DPHC Exercise
+                  Rehabilitation Instructor : BSc Strength &amp; Conditioning :
+                  British Weightlifting Strength and Power : Optimising Human
+                  Performance LVL 5
+                </p>
+                <p className="coach-quote">
+                  From Injury rehabilitation to high level hybrid performance:
+                  Science backed coaching engineered for those who want to
+                  achieve maximal capacity.
                 </p>
               </figcaption>
             </figure>
