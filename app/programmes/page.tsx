@@ -86,6 +86,7 @@ const programmes: Programme[] = [
     title: "AURIC SUB60",
     video: "/videos/alex-row.mp4",
     price: "£19.99 per month",
+    url: "https://app.fitr.training/p/auricsub60",
     intro:
       "A time-efficient version of OUTPERFORM, with every session designed to be completed in 60 minutes or less. Buy it standalone, or get it included with OUTRUN : OUTLIFT : OUTPERFORM.",
     points: [
@@ -212,21 +213,9 @@ export default function ProgrammesPage() {
                   Start programme
                 </a>
               ) : (
-                <div className="actions">
-                  <span className="btn is-disabled" aria-disabled="true">
-                    Coming soon
-                  </span>
-                  {programme.id === "auric-sub60" && (
-                    <a
-                      href="https://app.fitr.training/pa/outrunoutliftoutperform"
-                      className="btn"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Get it with the complete package
-                    </a>
-                  )}
-                </div>
+                <span className="btn is-disabled" aria-disabled="true">
+                  Coming soon
+                </span>
               )}
             </div>
           </article>
