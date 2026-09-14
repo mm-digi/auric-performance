@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SignupPopup from "@/components/SignupPopup";
 import JsonLd from "@/components/JsonLd";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 export const viewport = {
@@ -112,6 +113,7 @@ export default function RootLayout({
           } as React.CSSProperties
         }
       >
+        <GoogleAnalytics />
         <JsonLd />
         <Header />
         {children}
