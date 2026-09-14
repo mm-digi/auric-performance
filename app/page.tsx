@@ -99,7 +99,7 @@ export default function HomePage() {
                   Royal Marine Physical Training Instructor : DPHC Exercise
                   Rehabilitation Instructor : FdSc Sports Performance : British
                   Weightlifting Strength and Power : Optimising Human Performance
-                  LVL 5 : Sports Massage LVL 4
+                  LVL&nbsp;5 : Sports Massage LVL&nbsp;4
                 </p>
                 <p className="coach-quote">
                   Turning Experience into performance - helping people build
@@ -129,7 +129,7 @@ export default function HomePage() {
                   Royal Marine Physical Training Instructor : DPHC Exercise
                   Rehabilitation Instructor : BSc Strength &amp; Conditioning :
                   British Weightlifting Strength and Power : Optimising Human
-                  Performance LVL 5
+                  Performance LVL&nbsp;5
                 </p>
                 <p className="coach-quote">
                   From Injury rehabilitation to high level hybrid performance:
