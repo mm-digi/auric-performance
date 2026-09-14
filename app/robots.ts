@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://auricperformance.co.uk/sitemap.xml",
-    host: "https://auricperformance.co.uk",
+    sitemap: "https://www.auricperformance.co.uk/sitemap.xml",
+    host: "https://www.auricperformance.co.uk",
   };
 }

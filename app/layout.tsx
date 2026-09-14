@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   description:
     "Hybrid training, rehabilitation and 1:1 coaching by Royal Marine PTIs. OUTRUN, OUTLIFT, OUTPERFORM and Auric Rehab from Taunton, UK.",
-  metadataBase: new URL("https://auricperformance.co.uk"),
+  metadataBase: new URL("https://www.auricperformance.co.uk"),
   applicationName: "Auric Performance",
-  authors: [{ name: "Auric Performance", url: "https://auricperformance.co.uk" }],
+  authors: [{ name: "Auric Performance", url: "https://www.auricperformance.co.uk" }],
   creator: "Auric Performance",
   publisher: "Auric Performance",
   category: "fitness",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
       "Hybrid training, rehabilitation and 1:1 coaching by Royal Marine PTIs.",
     type: "website",
     locale: "en_GB",
-    url: "https://auricperformance.co.uk",
+    url: "https://www.auricperformance.co.uk",
     siteName: "Auric Performance",
     images: [
       {
@@ -88,6 +88,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     apple: "/icon.png",
+  },
+  verification: {
+    google: "FbSikXKWEQaKc4FdUU0ubmMBmIyt6pmOEQ_tmJ0LE5U",
   },
 };
 

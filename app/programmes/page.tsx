@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Programmes | Auric Performance",
     description:
       "OUTRUN, OUTLIFT, OUTPERFORM, AURIC SUB60, 1:1 coaching and Auric Rehab.",
-    url: "https://auricperformance.co.uk/programmes",
+    url: "https://www.auricperformance.co.uk/programmes",
   },
 };
 

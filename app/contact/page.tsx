@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact | Auric Performance",
     description: "Book a call with Alex or Courtney.",
-    url: "https://auricperformance.co.uk/contact",
+    url: "https://www.auricperformance.co.uk/contact",
   },
 };
 

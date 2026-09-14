@@ -8,7 +8,7 @@ import ProgramStrips from "@/components/ProgramStrips";
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
-    url: "https://auricperformance.co.uk",
+    url: "https://www.auricperformance.co.uk",
     title: "Auric Performance | Physical Performance Coaching",
     description:
       "Hybrid training, rehabilitation and 1:1 coaching by Royal Marine PTIs.",
