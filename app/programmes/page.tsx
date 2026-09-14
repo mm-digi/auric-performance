@@ -5,7 +5,14 @@ import LoopVideo from "@/components/LoopVideo";
 export const metadata: Metadata = {
   title: "Programmes",
   description:
-    "Auric Performance hybrid training, rehabilitation and personalised coaching programmes, programmed by Royal Marine PTIs.",
+    "OUTRUN, OUTLIFT, OUTPERFORM, AURIC SUB60, 1:1 coaching and Auric Rehab. Hybrid training and rehabilitation programmes by Royal Marine PTIs.",
+  alternates: { canonical: "/programmes" },
+  openGraph: {
+    title: "Programmes | Auric Performance",
+    description:
+      "OUTRUN, OUTLIFT, OUTPERFORM, AURIC SUB60, 1:1 coaching and Auric Rehab.",
+    url: "https://auricperformance.co.uk/programmes",
+  },
 };
 
 type Programme = {

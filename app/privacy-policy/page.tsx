@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Auric Performance collects, uses and protects personal information.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 const sections = [

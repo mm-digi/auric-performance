@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Book a call with Alex or Courtney at Auric Performance. Enquiries go to info@auricperformance.co.uk.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact | Auric Performance",
+    description: "Book a call with Alex or Courtney.",
+    url: "https://auricperformance.co.uk/contact",
+  },
 };
 
 const CALENDAR_SRC =

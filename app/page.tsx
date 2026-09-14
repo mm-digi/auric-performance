@@ -1,8 +1,19 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import LoopVideo from "@/components/LoopVideo";
 import ProgramStrips from "@/components/ProgramStrips";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    url: "https://auricperformance.co.uk",
+    title: "Auric Performance | Physical Performance Coaching",
+    description:
+      "Hybrid training, rehabilitation and 1:1 coaching by Royal Marine PTIs.",
+  },
+};
 
 export default function HomePage() {
   return (

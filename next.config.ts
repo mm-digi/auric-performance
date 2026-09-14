@@ -6,9 +6,15 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      { source: "/store", destination: "/programmes", permanent: false },
-      { source: "/blog", destination: "/", permanent: false },
-      { source: "/blog/:path*", destination: "/", permanent: false },
+      { source: "/store", destination: "/programmes", permanent: true },
+      { source: "/blog", destination: "/", permanent: true },
+      { source: "/blog/:path*", destination: "/", permanent: true },
+      { source: "/home", destination: "/", permanent: true },
+      { source: "/course-prep", destination: "/programmes", permanent: true },
+      { source: "/tactical-performance", destination: "/programmes", permanent: true },
+      { source: "/coaching", destination: "/programmes", permanent: true },
+      { source: "/the-auric-system", destination: "/programmes", permanent: true },
+      { source: "/strength-conditioning-tactical-roles", destination: "/programmes", permanent: true },
     ];
   },
 };
