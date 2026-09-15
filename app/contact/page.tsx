@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 const CALENDAR_SRC =
-  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0D8TjUshdOlf37pe0yArqLhw83NRT_33nP4UEJT-FwW49WnlhU4MveJqJAB87CPmLlrHEweRU8?gv=true";
+  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0pM6E43Qa3peKpzvqjkOLtCT37f29SQiyAX_SFsS4PohF90753t65UirmCWdaDVM3T3TxmaWLo?gv=true";
 
 export default function ContactPage() {
   return (
