@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SignupPopup from "@/components/SignupPopup";
 import JsonLd from "@/components/JsonLd";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 export const viewport = {
@@ -29,24 +30,25 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Auric Performance | Physical Performance Coaching",
+    default: "Auric Performance | 1:1 Personal Trainer, Southwest UK",
     template: "%s | Auric Performance",
   },
-  description:
-    "Hybrid training, rehabilitation and 1:1 coaching by Royal Marine PTIs. OUTRUN, OUTLIFT, OUTPERFORM and Auric Rehab from Taunton, UK.",
-  metadataBase: new URL("https://www.auricperformance.co.uk"),
+  description: site.description,
+  metadataBase: new URL(site.url),
   applicationName: "Auric Performance",
   authors: [{ name: "Auric Performance", url: "https://www.auricperformance.co.uk" }],
   creator: "Auric Performance",
   publisher: "Auric Performance",
   category: "fitness",
   keywords: [
+    "1:1 personal trainer",
+    "personal trainer southwest",
+    "physical performance coach",
+    "online programming",
+    "personal trainer Taunton",
+    "personal trainer Somerset",
     "hybrid training",
-    "strength and conditioning",
     "exercise rehabilitation",
-    "1:1 coaching",
-    "Royal Marine PTI",
-    "Taunton personal training",
     "OUTRUN",
     "OUTLIFT",
     "OUTPERFORM",
@@ -63,12 +65,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Auric Performance | Physical Performance Coaching",
-    description:
-      "Hybrid training, rehabilitation and 1:1 coaching by Royal Marine PTIs.",
+    title: "Auric Performance | 1:1 Personal Trainer, Southwest UK",
+    description: site.description,
     type: "website",
     locale: "en_GB",
-    url: "https://www.auricperformance.co.uk",
+    url: site.url,
     siteName: "Auric Performance",
     images: [
       {
@@ -81,9 +82,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Auric Performance | Physical Performance Coaching",
-    description:
-      "Hybrid training, rehabilitation and 1:1 coaching by Royal Marine PTIs.",
+    title: "Auric Performance | 1:1 Personal Trainer, Southwest UK",
+    description: site.description,
     images: ["/images/og.jpg"],
   },
   icons: {

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { site } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -17,10 +18,18 @@ export default function Footer() {
               </span>
             </Link>
             <p style={{ marginTop: 18, maxWidth: 420 }}>
-              Evidence-informed performance coaching engineered for those who
-              demand more from themselves. Helping you build strength, speed,
-              resilience, and lasting athletic capability.
+              1:1 personal training, online programming and physical performance
+              coaching from Taunton, for clients across the southwest.
             </p>
+            <address className="footer-address">
+              {site.address.street}
+              <br />
+              {site.address.locality}, {site.address.region}, {site.address.postalCode}
+              <br />
+              <a href={site.mapsUrl} target="_blank" rel="noreferrer">
+                Google Maps
+              </a>
+            </address>
             <div className="socials">
               <a
                 href="https://www.instagram.com/auricperformance/"
@@ -63,6 +72,12 @@ export default function Footer() {
             <ul>
               <li>
                 <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/personal-training">1:1 personal training</Link>
+              </li>
+              <li>
+                <Link href="/online-programming">Online programming</Link>
               </li>
               <li>
                 <Link href="/programmes">Programmes</Link>
