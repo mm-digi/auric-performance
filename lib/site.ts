@@ -26,19 +26,6 @@ export const site = {
   ],
 };
 
-export const serviceAreas = [
-  "Taunton",
-  "Somerset",
-  "Exeter",
-  "Devon",
-  "Bristol",
-  "Bath",
-  "Yeovil",
-  "Dorset",
-  "Cornwall",
-  "Wiltshire",
-] as const;
-
 export const areaServed = [
   { "@type": "AdministrativeArea" as const, name: "South West England" },
   { "@type": "AdministrativeArea" as const, name: "Somerset" },

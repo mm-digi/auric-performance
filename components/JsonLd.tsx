@@ -1,4 +1,4 @@
-import { areaServed, site } from "@/lib/site";
+import { areaServed, faqs, site } from "@/lib/site";
 
 const businessId = `${site.url}/#business`;
 
@@ -59,17 +59,17 @@ const jsonLd = {
           {
             "@type": "Offer",
             name: "1:1 personal training",
-            url: `${site.url}/personal-training`,
+            url: `${site.url}/programmes#coaching`,
           },
           {
             "@type": "Offer",
             name: "Physical performance coaching",
-            url: `${site.url}/personal-training`,
+            url: `${site.url}/programmes#coaching`,
           },
           {
             "@type": "Offer",
             name: "Online programming",
-            url: `${site.url}/online-programming`,
+            url: `${site.url}/programmes`,
           },
           { "@type": "Offer", name: "OUTRUN", url: `${site.url}/programmes#outrun` },
           { "@type": "Offer", name: "OUTLIFT", url: `${site.url}/programmes#outlift` },
@@ -88,7 +88,7 @@ const jsonLd = {
         "1:1 personal training and physical performance coaching for clients across the southwest of the UK, based in Taunton, Somerset.",
       provider: { "@id": businessId },
       areaServed,
-      url: `${site.url}/personal-training`,
+      url: `${site.url}/programmes#coaching`,
     },
     {
       "@type": "Service",
@@ -99,7 +99,7 @@ const jsonLd = {
         "Online hybrid training programmes, including OUTRUN, OUTLIFT, OUTPERFORM and AURIC SUB60, for clients in the southwest and across the UK.",
       provider: { "@id": businessId },
       areaServed,
-      url: `${site.url}/online-programming`,
+      url: `${site.url}/programmes`,
     },
     {
       "@type": "Person",
@@ -108,7 +108,7 @@ const jsonLd = {
       jobTitle: "Co-founder and physical performance coach",
       worksFor: { "@id": businessId },
       image: `${site.url}/images/alex.jpg`,
-      url: `${site.url}/personal-training`,
+      url: site.url,
     },
     {
       "@type": "Person",
@@ -117,7 +117,19 @@ const jsonLd = {
       jobTitle: "Co-founder and physical performance coach",
       worksFor: { "@id": businessId },
       image: `${site.url}/images/courtney.jpg`,
-      url: `${site.url}/personal-training`,
+      url: site.url,
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${site.url}/#faq`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
     },
     {
       "@type": "WebSite",

@@ -69,63 +69,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="wrap">
-          <div className="section-head">
-            <div className="kicker">Southwest UK</div>
-            <h2>
-              1:1 personal training
-              <br />
-              and online programming
-            </h2>
-            <p>
-              Auric Performance is a physical performance coaching practice based in
-              Taunton, Somerset. Alex and Courtney coach clients across the southwest
-              and online. The current work is 1:1 personal training, online programmes
-              and rehabilitation.
-            </p>
-          </div>
-          <div className="coaching-offer-grid">
-            <article className="offer-card">
-              <div className="kicker">In the southwest and online</div>
-              <h3>1:1 personal trainer</h3>
-              <p>
-                Personal training built around your goals, with weekly check-ins and a
-                coach who adjusts the plan as you progress.
-              </p>
-              <Link href="/personal-training" className="btn btn-gold">
-                1:1 coaching
-              </Link>
-            </article>
-            <article className="offer-card">
-              <div className="kicker">Taunton · Somerset</div>
-              <h3>Physical performance coach</h3>
-              <p>
-                Strength, running, rehab and the work between sessions, coached by
-                Royal Marine physical training instructors.
-              </p>
-              <Link href="/personal-training" className="btn">
-                Meet the coaching
-              </Link>
-            </article>
-            <article className="offer-card">
-              <div className="kicker">12-week blocks</div>
-              <h3>Online programming</h3>
-              <p>
-                OUTRUN, OUTLIFT, OUTPERFORM and AURIC SUB60, delivered through the
-                Auric training app for clients in the southwest and across the UK.
-              </p>
-              <Link href="/online-programming" className="btn">
-                View programmes
-              </Link>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <ProgramStrips />
 
-      <section className="section coaches" id="coaches">
+      <section className="section coaches">
         <div className="wrap">
           <div className="split-head">
             <div>
@@ -137,9 +83,9 @@ export default function HomePage() {
             <p>
               Two coaches. One standard. Auric Performance is built around
               assessment-led training, clear progression and the physical
-              qualities that matter when the work gets hard. 1:1 personal
-              training, online programming and rehabilitation, with 18+ years
-              of British military experience in the coaching team.
+              qualities that matter when the work gets hard. Specialising in
+              tactical and hybrid performance, with 18+ years of British
+              military experience in the coaching team.
             </p>
           </div>
 
