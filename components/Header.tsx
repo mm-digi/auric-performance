@@ -19,10 +19,10 @@ export default function Header() {
       <div className="wrap header-inner">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
           <Image
-            src="/images/logo-au3.png"
+            src="/images/logo-ap.png"
             alt="Auric Performance"
-            width={80}
-            height={80}
+            width={480}
+            height={275}
             priority
           />
           <span className="brand-text">

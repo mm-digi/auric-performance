@@ -12,10 +12,10 @@ const jsonLd = {
       legalName: site.name,
       url: site.url,
       email: site.email,
-      image: `${site.url}/images/logo-au3.png`,
+      image: `${site.url}/images/logo-auric.png`,
       logo: {
         "@type": "ImageObject",
-        url: `${site.url}/images/logo-au3.png`,
+        url: `${site.url}/images/logo-auric.png`,
       },
       description: site.description,
       slogan: "OUTRUN : OUTLIFT : OUTPERFORM",

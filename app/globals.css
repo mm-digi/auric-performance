@@ -153,8 +153,8 @@ button {
 }
 
 .brand img {
-  width: 80px;
-  height: 80px;
+  width: 76px;
+  height: auto;
   object-fit: contain;
 }
 
