@@ -30,8 +30,8 @@ export default function HomePage() {
             </span>
           </h1>
           <p className="lead">
-            Gold-standard 1:1 coaching from Royal Marine PTIs. We will help
-            you lose weight, build muscle and feel confident.
+            Gold-standard 1:1 coaching from Royal Marine PTIs. A clear plan,
+            real accountability and the discipline to see it through.
           </p>
           <div className="actions">
             <Link href="/contact" className="btn btn-gold">
@@ -114,9 +114,8 @@ export default function HomePage() {
                   LVL&nbsp;5 : Sports Massage LVL&nbsp;4
                 </p>
                 <p className="coach-quote">
-                  Bringing Royal Marine discipline to everyday training -
-                  helping you lose fat, build strength and feel confident in
-                  your own body.
+                  Bringing Royal Marine discipline to everyday training, so you
+                  stay consistent long after the motivation fades.
                 </p>
               </figcaption>
             </figure>
@@ -144,9 +143,9 @@ export default function HomePage() {
                   Performance LVL&nbsp;5
                 </p>
                 <p className="coach-quote">
-                  Whether you are coming back from injury, building muscle or
-                  losing weight: science-backed coaching to help you build a
-                  body capable of more.
+                  Whether you&apos;re coming back from injury or starting from
+                  scratch, science-backed coaching that meets you where you
+                  are.
                 </p>
               </figcaption>
             </figure>

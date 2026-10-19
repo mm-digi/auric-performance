@@ -12,8 +12,8 @@ export default function Footer() {
             </Link>
             <p style={{ marginTop: 18, maxWidth: 420 }}>
               Evidence-informed coaching engineered for those who demand more
-              from themselves. Helping you get stronger, build muscle, lose
-              weight and feel more confident.
+              from themselves. No extreme diets, no endless cardio, no generic
+              programmes.
             </p>
             <div className="socials">
               <a
