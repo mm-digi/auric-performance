@@ -8,13 +8,7 @@ export default function Footer() {
         <div className="footer-inner">
           <div>
             <Link href="/" className="brand">
-              <Image src="/images/logo-ap.png" alt="" width={480} height={275} />
-              <span className="brand-text">
-                <strong>
-                  Auric <span>Performance</span>
-                </strong>
-                <small>Physical Performance Coaching</small>
-              </span>
+              <Image src="/images/logo-long.png" alt="Auric Performance" width={1080} height={299} />
             </Link>
             <p style={{ marginTop: 18, maxWidth: 420 }}>
               Evidence-informed performance coaching engineered for those who

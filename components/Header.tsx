@@ -19,18 +19,12 @@ export default function Header() {
       <div className="wrap header-inner">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
           <Image
-            src="/images/logo-ap.png"
+            src="/images/logo-long.png"
             alt="Auric Performance"
-            width={480}
-            height={275}
+            width={1080}
+            height={299}
             priority
           />
-          <span className="brand-text">
-            <strong>
-              Auric <span>Performance</span>
-            </strong>
-            <small>Physical Performance Coaching</small>
-          </span>
         </Link>
 
         <nav className={open ? "nav open" : "nav"}>
