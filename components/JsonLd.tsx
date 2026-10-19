@@ -18,7 +18,7 @@ const jsonLd = {
         url: `${site.url}/images/logo-auric.png`,
       },
       description: site.description,
-      slogan: "OUTRUN : OUTLIFT : OUTPERFORM",
+      slogan: "Build a body capable of more.",
       priceRange: "££",
       areaServed,
       address: {

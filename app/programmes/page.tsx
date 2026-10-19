@@ -20,13 +20,29 @@ type Programme = {
   kicker: string;
   title: string;
   video: string;
-  price: string;
+  price?: string;
   url?: string;
+  bookCall?: boolean;
   intro: string;
   points: string[];
 };
 
 const programmes: Programme[] = [
+  {
+    id: "coaching",
+    kicker: "Personal performance coaching",
+    title: "1:1 Coaching",
+    video: "/videos/alex.mp4",
+    bookCall: true,
+    intro:
+      "A fully personalised training and performance coaching service, designed around your goals, schedule, lifestyle and performance demands.",
+    points: [
+      "Fully personalised training programme",
+      "Habit tracking, sleep optimisation and nutrition guidance",
+      "Weekly check-ins and ongoing programme adjustments",
+      "24/7 coach contact with a response within 24 hours",
+    ],
+  },
   {
     id: "outrun",
     kicker: "Hybrid programme · 12-week training blocks",
@@ -103,48 +119,14 @@ const programmes: Programme[] = [
       "Programmed by Royal Marine PTIs",
     ],
   },
-];
-
-const coachingOffers: Array<{
-  id?: string;
-  title: string;
-  kicker: string;
-  copy: string;
-  featured?: boolean;
-  points: string[];
-}> = [
-  {
-    title: "12-Week 1:1 Coaching",
-    kicker: "Personal performance coaching",
-    copy: "A fully personalised training and performance coaching service, designed around your goals, schedule, lifestyle and performance demands.",
-    points: [
-      "Fully personalised training programme",
-      "Habit tracking, sleep optimisation and nutrition guidance",
-      "Weekly check-ins and ongoing programme adjustments",
-      "24/7 coach contact with a response within 24 hours",
-    ],
-  },
-  {
-    title: "The Auric Athlete",
-    kicker: "Personal performance coaching",
-    copy: "The complete 1:1 coaching service, built around your goals, needs and constraints, with guidance across every area that drives performance.",
-    featured: true,
-    points: [
-      "Fully personalised training",
-      "Injury prevention and rehabilitation",
-      "60-minute workout pathway",
-      "Habit, sleep and nutrition guidance",
-      "Weekly check-ins and 24/7 coach contact",
-      "Ongoing programme adjustments",
-      "One sponsored event every 12 months after a minimum of 3 months’ training",
-      "Save 40% with the yearly plan",
-    ],
-  },
   {
     id: "auric-rehab",
-    title: "Auric Rehab",
     kicker: "Standalone 1:1 package",
-    copy: "A physiotherapy consultation followed by a bespoke, injury-specific training programme. Book a call to start.",
+    title: "Auric Rehab",
+    video: "/videos/bike.mp4",
+    bookCall: true,
+    intro:
+      "A physiotherapy consultation followed by a bespoke, injury-specific training programme. Book a call to start.",
     points: [
       "Online or in-person physiotherapy consultation",
       "Bespoke injury-specific exercise programme",
@@ -164,8 +146,8 @@ export default function ProgrammesPage() {
             OUTRUN : OUTLIFT : <span>OUTPERFORM</span>
           </h1>
           <p className="lead">
-            The old version of you. Choose focused hybrid programming, rehabilitation or fully
-            personalised performance coaching.
+            Build a body capable of more. Choose fully personalised 1:1 coaching, rehabilitation
+            or focused hybrid programming.
           </p>
         </div>
       </section>
@@ -176,7 +158,7 @@ export default function ProgrammesPage() {
             <div className="kicker">How the programmes work</div>
             <h3>Start at Day 1, Week 1</h3>
             <p>
-              Every programme is delivered in a 12-week block. Week 1 is your testing week, followed
+              Every online programme is delivered in a 12-week block. Week 1 is your testing week, followed
               by 10 weeks of structured training. In Week 12, you’ll repeat the initial testing
               battery to measure your progress before moving into your next training block.
             </p>
@@ -208,14 +190,18 @@ export default function ProgrammesPage() {
             <div className="program-copy">
               <div className="kicker">{programme.kicker}</div>
               <h2>{programme.title}</h2>
-              <p className="price-note">{programme.price}</p>
+              {programme.price ? <p className="price-note">{programme.price}</p> : null}
               <p>{programme.intro}</p>
               <ul>
                 {programme.points.map((point) => (
                   <li key={point}>{point}</li>
                 ))}
               </ul>
-              {programme.url ? (
+              {programme.bookCall ? (
+                <Link href="/contact" className="btn btn-gold">
+                  Book a call
+                </Link>
+              ) : programme.url ? (
                 <a href={programme.url} className="btn btn-gold" target="_blank" rel="noreferrer">
                   Start programme
                 </a>
@@ -227,38 +213,6 @@ export default function ProgrammesPage() {
             </div>
           </article>
         ))}
-      </section>
-
-      <section className="wrap offer-section" id="coaching">
-        <div className="section-head">
-          <div className="kicker">1:1 coaching</div>
-          <h2 className="plans-title">Built around you</h2>
-          <p>
-            Two personalised 1:1 coaching options, plus Auric Rehab as a standalone 1:1 package.
-            Rehab is booked on a call.
-          </p>
-        </div>
-        <div className="coaching-offer-grid">
-          {coachingOffers.map((offer) => (
-            <article
-              className={`offer-card${offer.featured ? " is-featured" : ""}`}
-              id={offer.id}
-              key={offer.title}
-            >
-              <div className="kicker">{offer.kicker}</div>
-              <h3>{offer.title}</h3>
-              <p>{offer.copy}</p>
-              <ul>
-                {offer.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-              <Link href="/contact" className="btn btn-gold">
-                Book a call
-              </Link>
-            </article>
-          ))}
-        </div>
       </section>
     </main>
   );

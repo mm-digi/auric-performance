@@ -11,9 +11,9 @@ export default function Footer() {
               <Image src="/images/logo-long.png" alt="Auric Performance" width={1080} height={299} />
             </Link>
             <p style={{ marginTop: 18, maxWidth: 420 }}>
-              Evidence-informed performance coaching engineered for those who
-              demand more from themselves. Helping you build strength, speed,
-              resilience, and lasting athletic capability.
+              Evidence-informed coaching engineered for those who demand more
+              from themselves. Helping you get stronger, build muscle, lose
+              weight and feel more confident.
             </p>
             <div className="socials">
               <a

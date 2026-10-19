@@ -24,13 +24,14 @@ export default function HomePage() {
           <div className="hero-copy">
           <div className="kicker">Auric Performance</div>
           <h1 className="display">
+            <span className="hero-line">Build a body</span>
             <span className="hero-line">
-              The <span>GOLD</span> standard in
+              capable of <span>more</span>
             </span>
-            <span className="hero-line">physical performance</span>
           </h1>
           <p className="lead">
-            OUTRUN : OUTLIFT : OUTPERFORM The old version of you.
+            Gold-standard 1:1 coaching from Royal Marine PTIs. We will help
+            you lose weight, build muscle and feel confident.
           </p>
           <div className="actions">
             <Link href="/contact" className="btn btn-gold">
@@ -41,7 +42,7 @@ export default function HomePage() {
             </Link>
           </div>
           <p className="hero-note">
-            Power · Strength · Endurance · Resilience
+            Lose fat · Build muscle · Get stronger · Move better
           </p>
           </div>
         </div>
@@ -113,9 +114,9 @@ export default function HomePage() {
                   LVL&nbsp;5 : Sports Massage LVL&nbsp;4
                 </p>
                 <p className="coach-quote">
-                  Turning Experience into performance - helping people build
-                  strength, resilience, and confidence, achieve their goals and
-                  discover what they&apos;re truly capable of.
+                  Bringing Royal Marine discipline to everyday training -
+                  helping you lose fat, build strength and feel confident in
+                  your own body.
                 </p>
               </figcaption>
             </figure>
@@ -143,9 +144,9 @@ export default function HomePage() {
                   Performance LVL&nbsp;5
                 </p>
                 <p className="coach-quote">
-                  From Injury rehabilitation to high level hybrid performance:
-                  Science backed coaching engineered for those who want to
-                  achieve maximal capacity.
+                  Whether you are coming back from injury, building muscle or
+                  losing weight: science-backed coaching to help you build a
+                  body capable of more.
                 </p>
               </figcaption>
             </figure>
