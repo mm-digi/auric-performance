@@ -43,7 +43,7 @@ export const faqs = [
   {
     question: "What does Auric Performance offer?",
     answer:
-      "Auric Performance offers 1:1 personal training, physical performance coaching, online programming and exercise rehabilitation. The current programmes are OUTRUN, OUTLIFT, OUTPERFORM, AURIC SUB60, 12-week 1:1 coaching, The Auric Athlete and Auric Rehab.",
+      "Auric Performance offers 1:1 personal training, physical performance coaching, online programming and exercise rehabilitation. The current programmes are 1:1 coaching, OUTRUN, OUTLIFT, OUTPERFORM, AURIC SUB60 and Auric Rehab.",
   },
   {
     question: "Do you offer 1:1 personal training in the southwest?",
