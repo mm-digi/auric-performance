@@ -51,20 +51,15 @@ export default function Club280Page() {
             <LoopVideo src="/videos/280-alex-son.mp4" />
           </div>
           <div className="club-intro">
-          <div className="club-lockup" role="img" aria-label="Auric 280 Club">
+          <div className="club-lockup">
             <Image
-              src="/images/280-club-mark.png"
-              alt=""
-              width={1166}
-              height={664}
+              src="/images/280-club-lockup.png"
+              alt="Auric 280 Club"
+              width={827}
+              height={900}
               priority
-              sizes="(max-width: 640px) 120px, 190px"
+              sizes="(max-width: 640px) 170px, 240px"
             />
-            <div className="club-wordmark" aria-hidden="true">
-              <span className="club-wordmark-auric">Auric</span>
-              <span className="club-wordmark-num">280</span>
-              <span className="club-wordmark-club">Club</span>
-            </div>
           </div>
           <div className="kicker">Coming soon · By Auric Performance</div>
           <h1 className="display">

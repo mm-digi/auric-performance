@@ -1602,50 +1602,12 @@ button {
 }
 
 .club-lockup {
-  display: flex;
-  align-items: center;
-  gap: 26px;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .club-lockup img {
-  width: 190px;
+  width: 240px;
   height: auto;
-}
-
-.club-wordmark {
-  display: grid;
-  justify-items: center;
-  line-height: 1;
-}
-
-.club-wordmark-auric {
-  font-family: var(--sub);
-  font-weight: 300;
-  font-size: 52px;
-  letter-spacing: 0.42em;
-  margin-right: -0.42em;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.club-wordmark-num {
-  font-family: var(--sub);
-  font-weight: 500;
-  font-size: 46px;
-  letter-spacing: 0.5em;
-  margin: 6px -0.5em 6px 0;
-  color: var(--gold);
-}
-
-.club-wordmark-club {
-  font-family: var(--body);
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: 0.5em;
-  margin-right: -0.5em;
-  text-transform: uppercase;
-  color: #fff;
 }
 
 .club-intro .display {
@@ -1781,10 +1743,6 @@ button {
 }
 
 @media (max-width: 640px) {
-  .club-lockup { gap: 16px; }
-  .club-lockup img { width: 120px; }
-  .club-wordmark-auric { font-size: 34px; }
-  .club-wordmark-num { font-size: 30px; }
-  .club-wordmark-club { font-size: 15px; }
+  .club-lockup img { width: 170px; }
   .club-fact { padding: 22px 18px; }
 }
