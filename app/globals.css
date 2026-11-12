@@ -1558,3 +1558,233 @@ button {
     flex-direction: column;
   }
 }
+
+/* Auric 280 Club */
+.club-hero {
+  position: relative;
+  padding: calc(var(--header) + 56px) 0 64px;
+  overflow: hidden;
+}
+
+.club-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 400px);
+  gap: 64px;
+  align-items: center;
+}
+
+.club-hero-video {
+  order: 2;
+  position: relative;
+  aspect-ratio: 9 / 16;
+  max-height: calc(100vh - var(--header) - 96px);
+  justify-self: end;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+}
+
+.club-hero-video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.2) contrast(1.06) brightness(0.85);
+}
+
+.club-intro {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.club-lockup {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-bottom: 18px;
+}
+
+.club-lockup img {
+  width: 190px;
+  height: auto;
+}
+
+.club-wordmark {
+  display: grid;
+  justify-items: center;
+  line-height: 1;
+}
+
+.club-wordmark-auric {
+  font-family: var(--sub);
+  font-weight: 300;
+  font-size: 52px;
+  letter-spacing: 0.42em;
+  margin-right: -0.42em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.club-wordmark-num {
+  font-family: var(--sub);
+  font-weight: 500;
+  font-size: 46px;
+  letter-spacing: 0.5em;
+  margin: 6px -0.5em 6px 0;
+  color: var(--gold);
+}
+
+.club-wordmark-club {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.5em;
+  margin-right: -0.5em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.club-intro .display {
+  font-size: clamp(48px, 6.5vw, 92px);
+  max-width: 760px;
+}
+
+.club-intro .display span {
+  display: block;
+}
+
+.club-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(232, 228, 219, 0.08);
+  border: 1px solid rgba(232, 228, 219, 0.08);
+}
+
+.club-fact {
+  background: var(--ink);
+  padding: 28px 24px;
+  display: grid;
+  gap: 8px;
+}
+
+.club-fact span {
+  font-family: var(--sub);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 219, 0.55);
+}
+
+.club-fact strong {
+  font-family: var(--title);
+  font-weight: 400;
+  font-size: clamp(30px, 3.4vw, 42px);
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.club-why {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 96px 0 0;
+}
+
+.club-why-photo {
+  margin: 0;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+}
+
+.club-why-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.club-why-copy h2 {
+  font-family: var(--title);
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 68px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 10px 0 18px;
+}
+
+.club-why-copy p {
+  margin: 0;
+  max-width: 560px;
+  color: rgba(232, 228, 219, 0.78);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.club-steps {
+  padding: 96px 0 72px;
+}
+
+.club-step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.club-step {
+  border-top: 2px solid var(--gold);
+  padding: 24px 4px 0;
+}
+
+.club-step-number {
+  font-family: var(--sub);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.club-step h2 {
+  font-family: var(--title);
+  font-weight: 400;
+  font-size: clamp(34px, 4vw, 52px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 10px 0 12px;
+}
+
+.club-step p {
+  margin: 0;
+  color: rgba(232, 228, 219, 0.75);
+  line-height: 1.7;
+}
+
+.club-cta {
+  padding-bottom: 96px;
+}
+
+@media (max-width: 980px) {
+  .club-hero { padding: calc(var(--header) + 40px) 0 56px; min-height: 100svh; display: grid; align-items: end; }
+  .club-hero-inner { grid-template-columns: 1fr; }
+  .club-hero-video { position: absolute; inset: 0; max-height: none; aspect-ratio: auto; border: 0; }
+  .club-hero-video video { filter: grayscale(0.2) brightness(0.5) contrast(1.06); }
+  .club-hero-video::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,13,12,0.2) 0%, rgba(14,13,12,0.55) 45%, rgba(14,13,12,0.95) 100%); }
+  .club-facts { grid-template-columns: repeat(2, 1fr); }
+  .club-why { grid-template-columns: 1fr; gap: 32px; padding-top: 64px; }
+  .club-why-photo { max-width: 400px; }
+  .club-step-grid { grid-template-columns: 1fr; gap: 36px; }
+  .club-steps { padding: 64px 0 48px; }
+}
+
+@media (max-width: 640px) {
+  .club-lockup { gap: 16px; }
+  .club-lockup img { width: 120px; }
+  .club-wordmark-auric { font-size: 34px; }
+  .club-wordmark-num { font-size: 30px; }
+  .club-wordmark-club { font-size: 15px; }
+  .club-fact { padding: 22px 18px; }
+}
