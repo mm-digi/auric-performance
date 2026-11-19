@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Saturdays at 07:30 in Taunton. 280 reps, kids welcome, coffee after. Starting Saturday 2 January 2027.",
     url: "https://www.auricperformance.co.uk/280-club",
-    images: ["/images/280-club-logo.png"],
+    images: ["/images/280-club-share.jpg"],
   },
 };
 
@@ -55,8 +55,8 @@ export default function Club280Page() {
             <Image
               src="/images/280-club-lockup.png"
               alt="Auric 280 Club"
-              width={827}
-              height={900}
+              width={1176}
+              height={1283}
               priority
               sizes="(max-width: 640px) 170px, 240px"
             />
@@ -89,13 +89,19 @@ export default function Club280Page() {
 
       <section className="wrap club-why">
         <figure className="club-why-photo">
-          <Image
-            src="/images/280-club-pressup.jpg"
-            alt="Alex doing a press-up in the garden with his baby son on his back, under the words: Train so your body can continue doing the things you love."
-            width={507}
-            height={785}
-            unoptimized
+          <video
+            src="/videos/280-pressup.mp4"
+            poster="/images/280-club-pressup-poster.jpg"
+            width={640}
+            height={990}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="Alex doing press-ups in the garden with his baby son lying on his back."
           />
+          <figcaption>Train so your body can continue doing the things you love.</figcaption>
         </figure>
         <div className="club-why-copy">
           <div className="kicker">Why we started it</div>
