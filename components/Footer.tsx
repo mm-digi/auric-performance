@@ -62,6 +62,9 @@ export default function Footer() {
                 <Link href="/programmes">Programmes</Link>
               </li>
               <li>
+                <Link href="/280-club">280 Club</Link>
+              </li>
+              <li>
                 <a href="https://app.fitr.training/t/AuricPerformance/" target="_blank" rel="noreferrer">Training App</a>
               </li>
               <li>
