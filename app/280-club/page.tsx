@@ -6,12 +6,12 @@ import LoopVideo from "@/components/LoopVideo";
 export const metadata: Metadata = {
   title: "Auric 280 Club",
   description:
-    "The fitness club built for dads. Saturdays at 07:30 in Taunton: 280 reps, kids welcome, coffee after. Coming soon from Auric Performance.",
+    "The fitness club built for dads. Saturdays at 07:30 in Taunton: 280 reps, kids welcome, coffee after. Starting Saturday 2 January 2027.",
   alternates: { canonical: "/280-club" },
   openGraph: {
     title: "Auric 280 Club | The fitness club built for dads",
     description:
-      "Saturdays at 07:30 in Taunton. 280 reps, kids welcome, coffee after. Coming soon from Auric Performance.",
+      "Saturdays at 07:30 in Taunton. 280 reps, kids welcome, coffee after. Starting Saturday 2 January 2027.",
     url: "https://www.auricperformance.co.uk/280-club",
     images: ["/images/280-club-logo.png"],
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const facts = [
   { label: "Where", value: "Taunton" },
-  { label: "When", value: "Saturdays 07:30" },
+  { label: "Starts", value: "Sat 2 Jan, 07:30" },
   { label: "The session", value: "280 reps" },
   { label: "Bring them", value: "Kids welcome" },
 ];
@@ -28,7 +28,7 @@ const steps = [
   {
     number: "01",
     title: "Turn up",
-    text: "Saturday, 07:30, Taunton. Bring the kids if you like. They are part of it.",
+    text: "Saturdays, 07:30, Taunton, from 2 January. Bring the kids if you like. They are part of it.",
   },
   {
     number: "02",
@@ -61,7 +61,7 @@ export default function Club280Page() {
               sizes="(max-width: 640px) 170px, 240px"
             />
           </div>
-          <div className="kicker">Coming soon · By Auric Performance</div>
+          <div className="kicker">Starts Saturday 2 January · By Auric Performance</div>
           <h1 className="display">
             The fitness club <span>built for dads</span>
           </h1>
@@ -124,10 +124,10 @@ export default function Club280Page() {
       <section className="wrap club-cta">
         <aside className="notice-bar">
           <div>
-            <div className="kicker">Launching soon</div>
+            <div className="kicker">Starting 2 January</div>
             <h3>Be there for the first Saturday</h3>
             <p>
-              Register your interest and we will tell you the start date and where to meet.
+              Register your interest and we will let you know where to meet before the first session.
             </p>
           </div>
           <Link href="/contact" className="btn btn-gold">
