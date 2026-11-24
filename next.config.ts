@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/280-club/admin", destination: "/admin", permanent: true },
+      { source: "/280-club/sign-in", destination: "/admin/sign-in", permanent: true },
       { source: "/store", destination: "/programmes", permanent: true },
       { source: "/blog", destination: "/", permanent: true },
       { source: "/blog/:path*", destination: "/", permanent: true },
