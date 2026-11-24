@@ -9,3 +9,5 @@ public/video-thumbs
 
 .vercel
 .env*
+!.env.example
+tsconfig.tsbuildinfo

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import LoopVideo from "@/components/LoopVideo";
+import ClubBooking from "@/components/ClubBooking";
 
 export const metadata: Metadata = {
   title: "Auric 280 Club",
@@ -97,9 +97,9 @@ export default function Club280Page() {
             where the kids are welcome and nobody trains&nbsp;alone.
           </p>
           <div className="actions">
-            <Link href="/contact" className="btn btn-gold">
-              Register interest
-            </Link>
+            <a href="#book" className="btn btn-gold">
+              Book your place
+            </a>
           </div>
           </div>
         </div>
@@ -177,21 +177,7 @@ export default function Club280Page() {
         </dl>
       </section>
 
-      <section className="wrap club-cta">
-        <aside className="notice-bar">
-          <div>
-            <div className="kicker">Starting 2 January</div>
-            <h3>Be there for the first Saturday</h3>
-            <p>
-              Places are limited to 10 adults each week. Register your interest to hold your spot
-              for the first session.
-            </p>
-          </div>
-          <Link href="/contact" className="btn btn-gold">
-            Register interest
-          </Link>
-        </aside>
-      </section>
+      <ClubBooking />
     </main>
   );
 }
