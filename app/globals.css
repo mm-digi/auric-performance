@@ -1740,6 +1740,53 @@ button {
   padding-bottom: 96px;
 }
 
+.club-details {
+  padding: 24px 0 96px;
+}
+
+.club-details h2 {
+  font-family: var(--title);
+  font-weight: 400;
+  font-size: clamp(34px, 4vw, 52px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 10px 0 28px;
+}
+
+.club-detail-list {
+  margin: 0;
+  border-top: 1px solid rgba(232, 228, 219, 0.12);
+}
+
+.club-detail {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(232, 228, 219, 0.12);
+}
+
+.club-detail dt {
+  font-family: var(--sub);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-top: 4px;
+}
+
+.club-detail dd {
+  margin: 0;
+  color: rgba(232, 228, 219, 0.85);
+  line-height: 1.7;
+}
+
+.club-detail dd a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 980px) {
   .club-hero { padding: calc(var(--header) + 40px) 0 56px; min-height: 100svh; display: grid; align-items: end; }
   .club-hero-inner { grid-template-columns: 1fr; }
@@ -1751,6 +1798,8 @@ button {
   .club-why-photo { max-width: 400px; }
   .club-step-grid { grid-template-columns: 1fr; gap: 36px; }
   .club-steps { padding: 64px 0 48px; }
+  .club-details { padding: 16px 0 64px; }
+  .club-detail { grid-template-columns: 1fr; gap: 6px; }
 }
 
 @media (max-width: 640px) {

@@ -6,29 +6,56 @@ import LoopVideo from "@/components/LoopVideo";
 export const metadata: Metadata = {
   title: "Auric 280 Club",
   description:
-    "The fitness club built for dads. Saturdays at 07:30 in Taunton: 280 reps, kids welcome, coffee after. Starting Saturday 2 January 2027.",
+    "The fitness club built for dads. Saturdays 07:30–08:30 at COACH, French Weir Park, Taunton: 280 reps, £10 per adult, kids free, coffee after. Starting Saturday 2 January 2027.",
   alternates: { canonical: "/280-club" },
   openGraph: {
     title: "Auric 280 Club | The fitness club built for dads",
     description:
-      "Saturdays at 07:30 in Taunton. 280 reps, kids welcome, coffee after. Starting Saturday 2 January 2027.",
+      "Saturdays 07:30–08:30 at French Weir Park, Taunton. 280 reps, £10 per adult, kids free, coffee after. Starting Saturday 2 January 2027.",
     url: "https://www.auricperformance.co.uk/280-club",
     images: ["/images/280-club-share.jpg"],
   },
 };
 
 const facts = [
-  { label: "Where", value: "Taunton" },
+  { label: "Where", value: "French Weir Park" },
   { label: "Starts", value: "Sat 2 Jan, 07:30" },
-  { label: "The session", value: "280 reps" },
-  { label: "Bring them", value: "Kids welcome" },
+  { label: "Price", value: "£10 per adult" },
+  { label: "Kids", value: "Free" },
+];
+
+const details = [
+  {
+    label: "First session",
+    value: "Saturday 2 January 2027, then every Saturday after that",
+  },
+  { label: "Weekly class", value: "Saturdays 07:30–08:30" },
+  {
+    label: "Venue",
+    value: "Park Room at COACH, French Weir Park, Taunton, TA1 1AW",
+    href: "https://coach-taunton.org.uk/find-us/",
+    linkText: "How to find COACH",
+  },
+  {
+    label: "Price and capacity",
+    value: "£10 per adult. Maximum 10 adults. Children attend free.",
+  },
+  {
+    label: "Children",
+    value: "Up to two children per dad, supervised by their parent throughout.",
+  },
+  {
+    label: "Coffee afterwards",
+    value: "The Weir Café at COACH, downstairs from 09:00. Drinks purchased individually.",
+  },
+  { label: "Parking", value: "Wood Street Car Park, Enfield Car Park, Tangier Car Park" },
 ];
 
 const steps = [
   {
     number: "01",
     title: "Turn up",
-    text: "Saturdays, 07:30, Taunton, from 2 January. Bring the kids if you like. They are part of it.",
+    text: "Saturdays, 07:30, Park Room at COACH, French Weir Park, from 2 January. Bring up to two kids. They are part of it.",
   },
   {
     number: "02",
@@ -38,7 +65,7 @@ const steps = [
   {
     number: "03",
     title: "Coffee after",
-    text: "Train together, then stay for a coffee with the other dads before the weekend gets going.",
+    text: "Train together, then head downstairs to The Weir Café from 09:00 for a coffee with the other dads before the weekend gets going.",
   },
 ];
 
@@ -66,8 +93,8 @@ export default function Club280Page() {
             The fitness club <span>built for dads</span>
           </h1>
           <p className="lead">
-            Train together. Coffee after. A Saturday morning session in Taunton where the kids are
-            welcome and nobody trains alone.
+            Train together. Coffee after. A Saturday morning session at French Weir Park, Taunton,
+            where the kids are welcome and nobody trains&nbsp;alone.
           </p>
           <div className="actions">
             <Link href="/contact" className="btn btn-gold">
@@ -127,13 +154,37 @@ export default function Club280Page() {
         </div>
       </section>
 
+      <section className="wrap club-details" aria-labelledby="club-details-heading">
+        <div className="kicker">The details</div>
+        <h2 id="club-details-heading">Everything you need to know</h2>
+        <dl className="club-detail-list">
+          {details.map((detail) => (
+            <div className="club-detail" key={detail.label}>
+              <dt>{detail.label}</dt>
+              <dd>
+                {detail.value}
+                {detail.href && (
+                  <>
+                    {" "}
+                    <a href={detail.href} target="_blank" rel="noopener noreferrer">
+                      {detail.linkText}
+                    </a>
+                  </>
+                )}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
       <section className="wrap club-cta">
         <aside className="notice-bar">
           <div>
             <div className="kicker">Starting 2 January</div>
             <h3>Be there for the first Saturday</h3>
             <p>
-              Register your interest and we will let you know where to meet before the first session.
+              Places are limited to 10 adults each week. Register your interest to hold your spot
+              for the first session.
             </p>
           </div>
           <Link href="/contact" className="btn btn-gold">
