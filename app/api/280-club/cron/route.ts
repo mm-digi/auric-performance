@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { listClasses, sweep } from "@/lib/club/service";
+import { listClasses, purgeExpired, sweep } from "@/lib/club/service";
 
 export const dynamic = "force-dynamic";
 
@@ -11,5 +11,6 @@ export async function GET(req: Request) {
   }
   await listClasses();
   const offered = await sweep();
-  return NextResponse.json({ ok: true, classesWithOffers: offered });
+  const purged = await purgeExpired();
+  return NextResponse.json({ ok: true, classesWithOffers: offered, purged });
 }

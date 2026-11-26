@@ -23,7 +23,7 @@ export const CLUB = {
   replyTo: "info@auricperformance.co.uk",
   healthContact: "alex@auricperformance.co.uk", // consent withdrawal and private health questions
   coachName: "Alex",
-  privacyUrl: "/privacy-policy",
+  privacyUrl: "/280-club/privacy",
 } as const;
 
 // Bump when the privacy notice linked above changes materially.
