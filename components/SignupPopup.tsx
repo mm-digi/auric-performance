@@ -2,13 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FormEvent, useEffect, useRef, useState } from "react";
 
 const DISMISSED_KEY = "auricSignupPopupDismissedAt";
 const SUBSCRIBED_KEY = "auricSignupPopupSubscribed";
 const DISMISS_MS = 14 * 24 * 60 * 60 * 1000;
 
+// Never interrupt sign-in, booking, account or coach pages.
+const QUIET_PATHS = /^\/(280-club\/(sign-in|book|booking|account)|admin)(\/|$)/;
+
 export default function SignupPopup() {
+  const quiet = QUIET_PATHS.test(usePathname() ?? "");
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const dialogRef = useRef<HTMLElement>(null);
@@ -17,6 +22,10 @@ export default function SignupPopup() {
   const submissionPendingRef = useRef(false);
 
   useEffect(() => {
+    if (quiet) {
+      setOpen(false);
+      return;
+    }
     const timer = window.setTimeout(() => {
       try {
         const dismissedAt = Number(localStorage.getItem(DISMISSED_KEY) || 0);
@@ -27,7 +36,7 @@ export default function SignupPopup() {
       } catch { setOpen(true); }
     }, 5000);
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [quiet]);
 
   useEffect(() => {
     if (!open) return;
@@ -60,6 +69,8 @@ export default function SignupPopup() {
     try { localStorage.setItem(SUBSCRIBED_KEY, "true"); } catch {}
     setSubmitted(true);
   };
+
+  if (quiet) return null;
 
   return <>
     <div className={`ap-signup-overlay${open ? " is-open" : ""}`} aria-hidden={!open} onMouseDown={(event) => { if (event.target === event.currentTarget) dismiss(); }}>
