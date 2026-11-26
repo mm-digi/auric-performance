@@ -32,7 +32,7 @@ const details = [
   { label: "Weekly class", value: "Saturdays 07:30–08:30" },
   {
     label: "Venue",
-    value: "Park Room at COACH, French Weir Park, Taunton, TA1 1AW",
+    value: "Park Room at COACH, French Weir Park, Taunton,\u00a0TA1\u00a01AW",
     href: "https://coach-taunton.org.uk/find-us/",
     linkText: "How to find COACH",
   },
