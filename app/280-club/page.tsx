@@ -114,6 +114,8 @@ export default function Club280Page() {
         ))}
       </section>
 
+      <ClubBooking />
+
       <section className="wrap club-why">
         <figure className="club-why-photo">
           <video
@@ -176,8 +178,6 @@ export default function Club280Page() {
           ))}
         </dl>
       </section>
-
-      <ClubBooking />
     </main>
   );
 }
