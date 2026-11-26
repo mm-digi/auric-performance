@@ -252,3 +252,34 @@ export async function sweep() {
   for (const r of due) await offerSpaces(r.id);
   return due.length;
 }
+
+/**
+ * Retention clean-up (see the 280 Club privacy notice, section 6):
+ * - sign-in codes after 30 days
+ * - waiting-list entries 12 months after their session
+ */
+export async function purgeExpired() {
+  const codesBefore = new Date(Date.now() - 30 * 86_400_000).toISOString();
+  const { count: codes } = await db()
+    .from("club_auth_codes")
+    .delete({ count: "exact" })
+    .lt("created_at", codesBefore);
+
+  const yearAgo = new Date();
+  yearAgo.setFullYear(yearAgo.getFullYear() - 1);
+  const oldClasses = (check(
+    await db().from("club_classes").select("id").lt("starts_at", yearAgo.toISOString()),
+  ) as { id: string }[]).map((c) => c.id);
+  let waitlist = 0;
+  if (oldClasses.length) {
+    const ids = (check(
+      await db().from("club_waitlist").select("id").in("class_id", oldClasses),
+    ) as { id: string }[]).map((w) => w.id);
+    if (ids.length) {
+      check(await db().from("club_bookings").update({ waitlist_id: null }).in("waitlist_id", ids));
+      const { count } = await db().from("club_waitlist").delete({ count: "exact" }).in("id", ids);
+      waitlist = count ?? 0;
+    }
+  }
+  return { codes: codes ?? 0, waitlist };
+}

@@ -20,6 +20,7 @@ const sections = [
   ["Cookies and third-party services", "This website may use essential technologies for hosting and security. External services such as FITR, Google Calendar, social-media platforms and payment providers operate under their own privacy and cookie notices. We are not responsible for the privacy practices of websites you visit through external links."],
   ["Your rights", "Depending on the circumstances, you may have rights to access, correct or erase your information, restrict or object to processing, request portability and withdraw consent. You may also complain to the UK Information Commissioner’s Office. Contact us to exercise a right; we may need to verify your identity."],
   ["Children", "Our services are not directed at children purchasing independently. Where a participant is under 18, a parent or legal guardian may need to provide consent, information and payment."],
+  ["Auric 280 Club", "If you book or take part in the Auric 280 Club, our separate 280 Club privacy notice (auricperformance.co.uk/280-club/privacy) explains the extra information we collect, including emergency contacts, children attending and pre-exercise health screening, and how we protect it."],
   ["Changes and contact", "We may update this policy when our services, providers or legal obligations change. Questions, privacy requests or complaints can be sent to info@auricperformance.co.uk."],
 ];
 
