@@ -42,7 +42,7 @@ export default function ClubBooking() {
       <p className="club-book-intro">
         {formatPrice(CLUB.pricePence)} per adult, paid when you book. {CLUB.capacity} places each week. Kids come free.
         You&rsquo;ll sign in with your email so your details, children and health screening are saved for next time. If
-        a class is full, join the waiting list and we&rsquo;ll email you if a place opens up.
+        a class is full, join the waiting list and we&rsquo;ll email you if a place opens&nbsp;up.
       </p>
 
       {notice && <p className="club-book-notice">{notice}</p>}

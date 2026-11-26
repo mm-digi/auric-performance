@@ -1810,7 +1810,7 @@ button {
 /* 280 Club booking */
 .club-book { padding: 64px 0 24px; scroll-margin-top: calc(var(--header) + 16px); }
 .club-book h2 { font-family: var(--title); font-weight: 400; font-size: clamp(34px, 4vw, 52px); letter-spacing: .04em; text-transform: uppercase; margin: 10px 0 12px; }
-.club-book-intro { max-width: 640px; margin: 0 0 28px; color: rgba(232,228,219,.75); line-height: 1.7; }
+.club-book-intro { max-width: 640px; margin: 0 0 28px; color: rgba(232,228,219,.75); line-height: 1.7; text-wrap: pretty; }
 .club-book-notice { padding: 14px 18px; border: 1px solid rgba(201,168,76,.4); background: var(--ink); line-height: 1.6; }
 .club-book-notice a { color: var(--gold); text-decoration: underline; }
 .club-book-error { color: #f0a58f; line-height: 1.6; }
