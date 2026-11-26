@@ -42,7 +42,7 @@ const details = [
   },
   {
     label: "Children",
-    value: "Bring your children along, supervised by you throughout. There’s no fixed limit; just bring as many as you can safely look after.",
+    value: "Bring your children along. They come free and stay your responsibility throughout: Alex coaches the adults only and doesn’t coach or supervise children. There’s no fixed limit; just bring as many as you can safely look after.",
   },
   {
     label: "Coffee afterwards",
@@ -55,7 +55,7 @@ const steps = [
   {
     number: "01",
     title: "Turn up",
-    text: "Saturdays, 07:30, Park Room at COACH, French Weir Park, from 2 January. Bring the kids. They are part of it.",
+    text: "Saturdays, 07:30, Park Room at COACH, French Weir Park, from 2 January. Bring the kids along: they come free and stay with you. Alex coaches the dads; you look after your own children.",
   },
   {
     number: "02",
