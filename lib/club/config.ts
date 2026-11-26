@@ -14,7 +14,7 @@ export const CLUB = {
   offerHours: 12, // how long a waiting-list offer is held for
   screeningRefreshMonths: 12, // proposed club review interval for a full questionnaire refresh
   time: "07:30–08:30",
-  venue: "Park Room at COACH, French Weir Park, Taunton, TA1 1AW",
+  venue: "Park Room at COACH, French Weir Park, Taunton,\u00a0TA1\u00a01AW",
   venueUrl: "https://coach-taunton.org.uk/find-us/",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=COACH+French+Weir+Park+Taunton+TA1+1AW",
   parking: "Wood Street Car Park, Enfield Car Park, Tangier Car Park",
