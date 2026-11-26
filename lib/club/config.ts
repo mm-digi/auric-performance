@@ -19,7 +19,7 @@ export const CLUB = {
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=COACH+French+Weir+Park+Taunton+TA1+1AW",
   parking: "Wood Street Car Park, Enfield Car Park, Tangier Car Park",
   coffee: "The Weir Café at COACH, downstairs from 09:00. Drinks purchased individually.",
-  children: "Children attend free with their parent, who supervises them throughout.",
+  children: "Children attend free with their parent, who is responsible for them throughout. Alex coaches adults only and does not coach or supervise children.",
   replyTo: "info@auricperformance.co.uk",
   healthContact: "alex@auricperformance.co.uk", // consent withdrawal and private health questions
   coachName: "Alex",
@@ -36,10 +36,11 @@ export const CANCELLATION_POLICY = [
 ];
 
 // ---------------------------------------------------------------------------
-// Parent participation waiver (client document, version 1.4)
+// Parent participation waiver (client document v1.4, amended 26 Nov 2026 per Alex:
+// Alex coaches adults only; children copying their parent are the parent's responsibility)
 // ---------------------------------------------------------------------------
 
-export const WAIVER_VERSION = "1.4";
+export const WAIVER_VERSION = "1.5";
 export const WAIVER_TITLE = "Parent participation waiver";
 
 export const WAIVER: { heading: string | null; body: string[] }[] = [
@@ -68,7 +69,7 @@ export const WAIVER: { heading: string | null; body: string[] }[] = [
   {
     heading: "My responsibility for my children",
     body: [
-      "I am each child’s parent or legal guardian, or have permission from a person with parental responsibility to bring and supervise them. I give prior consent for every child recorded in this booking to attend with me under my continuous supervision. I accept primary responsibility for their care and behaviour. Auric provides adult coaching, not childcare. These responsibilities do not replace Auric’s own duties towards adults or children.",
+      "I am each child’s parent or legal guardian, or have permission from a person with parental responsibility to bring and supervise them. I give prior consent for every child recorded in this booking to attend with me under my continuous supervision. I accept full responsibility for their care, safety and behaviour throughout the session. Auric provides coaching for adults only: Alex does not coach, instruct, supervise or look after children at any time, and children are not participants in the class. This does not affect Auric’s own legal duties, such as keeping the space and equipment reasonably safe.",
       "There is no fixed child-number limit, but I will bring only as many children as I can safely supervise. I will tell Auric their number and relevant ages before attending. Safe layout and venue occupancy limits still apply. I will remain present, keep children within sight and close enough to intervene, and stop exercising to attend to them. If safe supervision is not possible, I will stop and, if necessary, leave the session.",
     ],
   },
@@ -76,7 +77,7 @@ export const WAIVER: { heading: string | null; body: string[] }[] = [
     heading: "Children and training equipment",
     body: [
       "I will keep children clear of moving weights, loaded bars, equipment storage and other adults’ exercise space. They must not run through stations, climb on equipment or handle kit without permission. I will put my own load down safely before attending to a child. Buggies and belongings must be positioned as directed with exits clear; brakes and restraints must follow the manufacturer’s instructions. I will not use a child as a weight or exercise while holding or wearing a child.",
-      "My consent allows children to accompany me; it does not automatically permit exercise. A child may copy a movement only after Alex specifically confirms that it is suitable and permitted by the qualifications, insurance and risk assessment, and I consent beforehand. Any required child screening and consent must also be completed. Adult loads and repetitions are not automatically suitable. I remain responsible for supervision and will stop a child if distressed or instructed.",
+      "Children come along with me; they are not coached and are not given exercises. Alex will not coach, instruct or give exercises to children. If a child chooses to copy me or join in, that is my decision and entirely my responsibility. I will make sure anything they do is safe for their age and size, never let them use adult weights or equipment, keep them clear of other adults, and stop them if it becomes unsafe, if they are distressed, or if Alex asks. Alex may ask a child to stop for their own or others’ safety; doing so is not coaching or supervising the child.",
     ],
   },
   {
@@ -103,7 +104,7 @@ export const WAIVER: { heading: string | null; body: string[] }[] = [
 ];
 
 export const WAIVER_ACK =
-  "I have read, understood and agree to the full Auric 280 Club Parent Participation Waiver, version 1.4. I accept the responsibilities for my participation and the children I bring, consent to their attendance under my supervision, and acknowledge the risks described. My booking information is accurate to the best of my knowledge and I will report relevant changes. I understand that my and my children’s legal rights remain protected.";
+  `I have read, understood and agree to the full Auric 280 Club Parent Participation Waiver, version ${WAIVER_VERSION}. I accept the responsibilities for my participation and the children I bring, consent to their attendance under my supervision, and acknowledge the risks described. I understand that Alex coaches adults only and does not coach or supervise children, and that if my children copy or join in with exercises, that is my responsibility. My booking information is accurate to the best of my knowledge and I will report relevant changes. I understand that my and my children’s legal rights remain protected.`;
 
 /** Plain-text copy of the waiver for emails. */
 export const waiverText = (): string[] =>
