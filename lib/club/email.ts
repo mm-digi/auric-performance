@@ -1,5 +1,14 @@
 import "server-only";
-import { CANCELLATION_POLICY, CLUB, WAIVER, WAIVER_TITLE } from "./config";
+import {
+  CANCELLATION_POLICY,
+  CLUB,
+  HEALTH_CONSENT,
+  HEALTH_CONSENT_VERSION,
+  REVIEW_PENDING_NOTICE,
+  WAIVER_TITLE,
+  WAIVER_VERSION,
+  waiverText,
+} from "./config";
 import { formatClassDate, formatDateTime, formatPrice } from "./format";
 import { mailer, siteUrl } from "./server";
 
@@ -57,19 +66,40 @@ async function notifyCoach(subject: string, text: string) {
   await send(to, subject, layout(subject, `<p>${esc(text).replace(/\n/g, "<br>")}</p>`), text);
 }
 
+export type ConfirmationExtras = {
+  childrenAttending: { name: string; age: string }[];
+  reviewed: boolean; // screening reviewed as suitable and nothing new waiting for review
+  deferred: boolean;
+  healthConsentGiven: boolean;
+};
+
 export async function sendBookingConfirmation(
   booking: Person & { children: number; manage_token: string; amount_pence: number | null },
   cls: ClassInfo,
+  extras: ConfirmationExtras | null,
 ) {
   const date = formatClassDate(cls.starts_at);
   const manageUrl = `${siteUrl()}/280-club/booking/${booking.manage_token}`;
-  const kids =
-    booking.children === 0 ? "Just you" : booking.children === 1 ? "You and 1 child" : `You and ${booking.children} children`;
+  const accountUrl = `${siteUrl()}/280-club/account`;
+  const kidsList = extras?.childrenAttending ?? [];
+  const kids = kidsList.length
+    ? `You and ${kidsList.map((c) => `${c.name} (${c.age})`).join(", ")}`
+    : booking.children === 0
+      ? "Just you"
+      : `You and ${booking.children} ${booking.children === 1 ? "child" : "children"}`;
+  const screeningLine = extras?.deferred
+    ? `Exercise is currently deferred following your screening review. Please speak to ${CLUB.coachName} before you train.`
+    : extras?.reviewed
+      ? "Your health screening has been reviewed."
+      : REVIEW_PENDING_NOTICE;
+  const waiver = waiverText();
+  const heading = (p: string) => p === p.toUpperCase();
 
   const html = layout(
     "You're booked in",
     `<p>Hi ${esc(firstName(booking.name))},</p>
-<p>Your place at the Auric 280 Club is confirmed. See you on Saturday.</p>
+<p>Your place at the Auric 280 Club is confirmed.</p>
+<p style="padding:14px 16px;border:1px solid ${extras?.reviewed ? "#2e2d29" : "#c9a84c"};color:#ffffff"><strong>Health screening:</strong> ${esc(screeningLine)}</p>
 ${detailsTable([
   ["Date", esc(date)],
   ["Time", `${CLUB.time} (arrive a few minutes early)`],
@@ -83,15 +113,29 @@ ${detailsTable([
 <p><strong style="color:#ffffff">Cancellation policy</strong></p>
 <ul style="padding-left:18px;margin:8px 0 0">${CANCELLATION_POLICY.map((l) => `<li>${esc(l)}</li>`).join("")}</ul>
 ${button(manageUrl, "View or cancel booking")}
-<h2 style="margin:32px 0 8px;font-size:16px;color:#ffffff;text-transform:uppercase;letter-spacing:1px">${esc(WAIVER_TITLE)}</h2>
-<p style="font-size:13px;color:#b8b3a9">You agreed to the following when you booked. Please read it again before the session.</p>
-${WAIVER.map((p) => `<p style="font-size:13px;color:#b8b3a9">${esc(p)}</p>`).join("")}`,
+<p style="font-size:13px">Update your details, children or health answers any time in <a href="${accountUrl}" style="color:#c9a84c">your 280 Club account</a>.</p>
+<h2 style="margin:32px 0 8px;font-size:16px;color:#ffffff;text-transform:uppercase;letter-spacing:1px">${esc(WAIVER_TITLE)} (version ${esc(WAIVER_VERSION)})</h2>
+<p style="font-size:13px;color:#b8b3a9">You accepted this when you booked. Keep this email as your copy.</p>
+${waiver
+  .map((p) =>
+    heading(p)
+      ? `<p style="font-size:12px;letter-spacing:1px;color:#c9a84c;margin-top:18px">${esc(p)}</p>`
+      : `<p style="font-size:13px;color:#b8b3a9">${esc(p)}</p>`,
+  )
+  .join("")}
+${
+  extras?.healthConsentGiven
+    ? `<p style="font-size:12px;letter-spacing:1px;color:#c9a84c;margin-top:18px">HEALTH INFORMATION CONSENT (VERSION ${esc(HEALTH_CONSENT_VERSION)})</p><p style="font-size:13px;color:#b8b3a9">${esc(HEALTH_CONSENT)} You can withdraw this consent in your account or by emailing ${esc(CLUB.healthContact)}.</p>`
+    : ""
+}`,
   );
 
   const text = [
     `Hi ${firstName(booking.name)},`,
     "",
     "Your place at the Auric 280 Club is confirmed.",
+    "",
+    `Health screening: ${screeningLine}`,
     "",
     `Date: ${date}`,
     `Time: ${CLUB.time}`,
@@ -105,16 +149,60 @@ ${WAIVER.map((p) => `<p style="font-size:13px;color:#b8b3a9">${esc(p)}</p>`).joi
     ...CANCELLATION_POLICY.map((l) => `- ${l}`),
     "",
     `View or cancel your booking: ${manageUrl}`,
+    `Your account: ${accountUrl}`,
     "",
-    WAIVER_TITLE.toUpperCase(),
-    ...WAIVER,
+    `${WAIVER_TITLE.toUpperCase()} (VERSION ${WAIVER_VERSION})`,
+    ...waiver,
+    ...(extras?.healthConsentGiven
+      ? ["", `HEALTH INFORMATION CONSENT (VERSION ${HEALTH_CONSENT_VERSION})`, HEALTH_CONSENT]
+      : []),
   ].join("\n");
 
   await send(booking.email, `You're booked in: 280 Club, ${date}`, html, text);
   await notifyCoach(
     `New 280 Club booking: ${date}`,
-    `${booking.name} (${booking.email}) booked ${date}. Children: ${booking.children}.`,
+    `${booking.name} (${booking.email}) booked ${date}. Children attending: ${booking.children}.`,
   );
+}
+
+export async function sendSignInCode(email: string, code: string, coach = false) {
+  const title = coach ? "Coach sign-in code" : "Your sign-in code";
+  const intro = coach
+    ? "Use this code to finish signing in to the 280 Club coach area."
+    : "Use this code to sign in to your Auric 280 Club account.";
+  const html = layout(
+    title,
+    `<p>${esc(intro)}</p><p style="margin:24px 0;font-size:34px;letter-spacing:10px;color:#ffffff;font-weight:bold">${code}</p><p>It expires in 10 minutes. If you didn't ask for this, you can ignore this email.</p>`,
+  );
+  await send(
+    email,
+    `${code} is your 280 Club sign-in code`,
+    html,
+    `${intro}\n\n${code}\n\nIt expires in 10 minutes. If you didn't ask for this, you can ignore this email.`,
+  );
+}
+
+/** Tells the coach a screening needs review. Never includes health answers. */
+export async function sendReviewNeeded(customer: { name: string | null; email: string; id: string }, reason: string) {
+  const to = process.env.CLUB_HEALTH_ALERT_EMAIL || CLUB.healthContact;
+  const url = `${siteUrl()}/admin/screening/${customer.id}`;
+  const who = customer.name || customer.email;
+  const html = layout(
+    "Screening review needed",
+    `<p>${esc(who)} ${esc(reason)}.</p><p>Please review it before they next exercise. Answers are only shown in the secure coach area.</p>${button(url, "Open review")}`,
+  );
+  await send(to, `280 Club: screening review needed (${who})`, html, `${who} ${reason}.\n\nReview it before they next exercise: ${url}`);
+}
+
+export async function sendConsentWithdrawn(customer: { name: string | null; email: string; id: string }) {
+  const to = process.env.CLUB_HEALTH_ALERT_EMAIL || CLUB.healthContact;
+  const url = `${siteUrl()}/admin/screening/${customer.id}`;
+  const who = customer.name || customer.email;
+  const html = layout(
+    "Health consent withdrawn",
+    `<p>${esc(who)} has withdrawn consent to Auric Performance using their health information.</p><p>Stop consent-based use of their health answers and follow up on screening before their next session.</p>${button(url, "Open record")}`,
+  );
+  await send(to, `280 Club: health consent withdrawn (${who})`, html, `${who} has withdrawn health-data consent.\n\nRecord: ${url}`);
 }
 
 export async function sendCancellation(
@@ -187,12 +275,12 @@ export async function sendWaitlistJoined(person: Person, cls: ClassInfo) {
 }
 
 export async function sendSpaceOffered(
-  person: Person & { offer_token: string; offer_expires_at: string },
+  person: Person & { class_id: string; offer_token: string; offer_expires_at: string },
   cls: ClassInfo,
 ) {
   const date = formatClassDate(cls.starts_at);
   const until = formatDateTime(person.offer_expires_at);
-  const url = `${siteUrl()}/280-club?offer=${person.offer_token}#book`;
+  const url = `${siteUrl()}/280-club/book/${person.class_id}?offer=${person.offer_token}`;
   const html = layout(
     "A place has opened up",
     `<p>Hi ${esc(firstName(person.name))},</p><p>Good news: a place has opened up at the 280 Club on <strong>${esc(date)}</strong>.</p><p>We're holding it for you until <strong>${esc(until)}</strong>. After that it goes to the next person on the waiting list.</p>${button(url, "Book my place")}`,
