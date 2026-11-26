@@ -1899,7 +1899,7 @@ button {
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .club-book-hero { padding-bottom: 24px; }
 .club-book-who { margin: 14px 0 0; font-size: 14px; color: rgba(232,228,219,.65); }
-.club-book-who a, .club-book-intro a, .club-form-help a, .club-account a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.club-book-who a, .club-book-intro a, .club-form-help a, .club-account a:not(.btn) { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
 .club-book-page, .club-account { padding-bottom: 96px; }
 .club-wizard { display: grid; gap: 20px; max-width: 900px; }
 .club-step-card, .club-account-block { padding: 28px 32px; background: var(--ink); border-top: 2px solid var(--gold); }
