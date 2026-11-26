@@ -41,3 +41,14 @@ export function mailer(): Resend | null {
 export function siteUrl(): string {
   return (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "");
 }
+
+/**
+ * Whether customers can book. Needs Stripe (or local dev without it), and in
+ * production also CLUB_PRIVACY_NOTICE_READY=true: health questions must not be
+ * collected until the full privacy notice is live.
+ */
+export function bookingOpen(): boolean {
+  if (!payments() && !skipPayments()) return false;
+  if (process.env.NODE_ENV === "production" && process.env.CLUB_PRIVACY_NOTICE_READY !== "true") return false;
+  return true;
+}

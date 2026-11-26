@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { ADMIN_COOKIE, isValidAdminSession } from "@/lib/club/admin-session";
 
 // Protects the 280 Club admin at /admin. Coaches sign in at /admin/sign-in with
-// an email in CLUB_ADMIN_EMAILS and CLUB_ADMIN_PASSWORD (signed session cookie).
+// an email in CLUB_ADMIN_EMAILS, CLUB_ADMIN_PASSWORD and an emailed code.
 export async function middleware(req: NextRequest) {
   if (req.nextUrl.pathname === "/admin/sign-in") return NextResponse.next();
   if (await isValidAdminSession(req.cookies.get(ADMIN_COOKIE)?.value)) return NextResponse.next();

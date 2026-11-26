@@ -38,11 +38,11 @@ const details = [
   },
   {
     label: "Price and capacity",
-    value: "£10 per adult. Maximum 10 adults. Children attend free.",
+    value: "£10 per adult. Maximum 12 adults. Children attend free.",
   },
   {
     label: "Children",
-    value: "Up to two children per dad, supervised by their parent throughout.",
+    value: "Bring your children along, supervised by you throughout. There’s no fixed limit; just bring as many as you can safely look after.",
   },
   {
     label: "Coffee afterwards",
@@ -55,7 +55,7 @@ const steps = [
   {
     number: "01",
     title: "Turn up",
-    text: "Saturdays, 07:30, Park Room at COACH, French Weir Park, from 2 January. Bring up to two kids. They are part of it.",
+    text: "Saturdays, 07:30, Park Room at COACH, French Weir Park, from 2 January. Bring the kids. They are part of it.",
   },
   {
     number: "02",

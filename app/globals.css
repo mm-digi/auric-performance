@@ -1892,3 +1892,90 @@ button {
 .club-signin-gap { margin-top: 16px; }
 .club-admin-signout { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 .club-admin-signout span { color: rgba(232,228,219,.65); font-size: 14px; }
+
+/* ---------------------------------------------------------------------------
+   280 Club: accounts, booking wizard, screening, coach review
+--------------------------------------------------------------------------- */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.club-book-hero { padding-bottom: 24px; }
+.club-book-who { margin: 14px 0 0; font-size: 14px; color: rgba(232,228,219,.65); }
+.club-book-who a, .club-book-intro a, .club-form-help a, .club-account a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.club-book-page, .club-account { padding-bottom: 96px; }
+.club-wizard { display: grid; gap: 20px; max-width: 900px; }
+.club-step-card, .club-account-block { padding: 28px 32px; background: var(--ink); border-top: 2px solid var(--gold); }
+.club-account { display: grid; gap: 24px; max-width: 900px; }
+.club-step-card header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; }
+.club-step-card header span { font: 500 12px/1 var(--sub); letter-spacing: .2em; color: var(--gold); }
+.club-step-card h2, .club-account-block h2 { margin: 0 0 12px; font: 400 clamp(28px, 3vw, 38px)/1 var(--title); letter-spacing: .04em; text-transform: uppercase; color: #fff; }
+.club-step-card header h2 { margin: 0; }
+.club-form-sub { margin: 24px 0 6px; font: 500 12px/1 var(--sub); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.club-form-help { margin: 0 0 14px; font-size: 14px; line-height: 1.65; color: rgba(232,228,219,.7); }
+.club-book-fields-3 { grid-template-columns: repeat(3, 1fr); margin: 12px 0 16px; }
+.club-textarea { display: block; margin: 14px 0; }
+.club-textarea > span { display: block; margin-bottom: 8px; font: 500 11px/1.4 var(--sub); letter-spacing: .14em; text-transform: uppercase; color: rgba(232,228,219,.7); }
+.club-textarea textarea, .club-review-form select { width: 100%; padding: 12px 14px; color: #fff; background: rgba(255,255,255,.05); border: 1px solid rgba(232,228,219,.17); border-radius: 6px; font: 400 15px/1.5 var(--body); resize: vertical; }
+.club-textarea textarea:focus { border-color: var(--gold); outline: 2px solid var(--gold); outline-offset: 2px; }
+.club-summary { margin: 0 0 16px; display: grid; gap: 0; border-top: 1px solid rgba(232,228,219,.1); }
+.club-summary > div { display: grid; grid-template-columns: 170px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid rgba(232,228,219,.1); }
+.club-summary dt { font: 500 11px/1.6 var(--sub); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.club-summary dd { margin: 0; color: rgba(232,228,219,.9); line-height: 1.6; }
+.club-link-btn { padding: 0; background: none; border: 0; color: var(--gold); font: 500 14px/1.5 var(--body); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.club-link-btn:disabled { opacity: .5; }
+.club-children { display: grid; gap: 14px; margin: 12px 0; }
+.club-child { margin: 0; padding: 16px 18px; border: 1px solid rgba(232,228,219,.14); border-radius: 6px; }
+.club-child.is-off .club-book-fields { opacity: .55; }
+.club-child .club-book-fields { margin: 10px 0; }
+.club-child-attending { display: inline-flex; gap: 10px; align-items: center; font-weight: 600; cursor: pointer; }
+.club-child-attending input { width: 18px; height: 18px; accent-color: var(--gold); }
+.club-children .btn { justify-self: start; }
+.club-children-total { margin: 4px 0 0; color: var(--gold); font-size: 14px; }
+.club-yn { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; padding: 0; border: 0; }
+.club-yn legend { margin-bottom: 10px; line-height: 1.55; color: rgba(232,228,219,.9); }
+.club-yn-wide { margin-bottom: 16px; }
+.club-yn label { position: relative; display: inline-flex; align-items: center; min-height: 42px; padding: 0 18px; border: 1px solid rgba(232,228,219,.22); border-radius: 999px; cursor: pointer; font-size: 14px; }
+.club-yn label.is-on { border-color: var(--gold); background: rgba(201,168,76,.16); color: #fff; }
+.club-yn input { position: absolute; opacity: 0; pointer-events: none; }
+.club-yn label:focus-within { outline: 2px solid var(--gold); outline-offset: 2px; }
+.club-questions { margin: 18px 0; padding-left: 22px; display: grid; gap: 18px; }
+.club-questions fieldset { margin: 0; padding: 0; border: 0; }
+.club-questions legend { line-height: 1.55; }
+.club-consent { margin-bottom: 18px; padding-bottom: 6px; border-bottom: 1px solid rgba(232,228,219,.1); }
+.club-permissions .club-ack { margin: 12px 0; }
+.club-waiver h5 { margin: 16px 0 8px; font: 500 12px/1 var(--sub); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.club-waiver .club-waiver-text { max-height: 340px; }
+.club-health-status { margin: 0 0 16px; padding: 12px 16px; border-left: 3px solid; line-height: 1.6; }
+.club-health-status.is-ok { border-color: #7fb88a; background: rgba(127,184,138,.08); }
+.club-health-status.is-warn { border-color: var(--gold); background: rgba(201,168,76,.1); color: #fff; }
+.club-saved { color: #9fd3a8; font-size: 14px; }
+.club-account-block .btn { margin-top: 8px; }
+.club-account-actions { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
+.club-account-bookings { list-style: none; margin: 0 0 18px; padding: 0; border-top: 1px solid rgba(232,228,219,.1); }
+.club-account-bookings li { display: grid; grid-template-columns: 1fr auto auto; gap: 16px; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(232,228,219,.1); }
+.club-account-bookings span { color: rgba(232,228,219,.7); font-size: 14px; }
+.club-signin-form { display: flex; flex-direction: column; }
+.club-signin-alt { margin: 16px 0 0; text-align: center; font-size: 13px; color: rgba(232,228,219,.6); }
+.club-signin-alt button, .club-signin-alt a { padding: 0; background: none; border: 0; color: var(--gold); font: inherit; text-decoration: underline; cursor: pointer; }
+.club-badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; white-space: nowrap; }
+.club-badge.is-ok { background: rgba(127,184,138,.15); color: #9fd3a8; }
+.club-badge.is-warn { background: rgba(201,168,76,.18); color: #f0d38a; }
+.club-admin-help { max-width: 720px; color: rgba(232,228,219,.7); line-height: 1.65; }
+.club-admin-class td small { display: block; color: rgba(232,228,219,.5); font-size: 12px; }
+.club-admin-class td a, .club-admin-class p a { color: var(--gold); }
+.club-screen-entry { padding: 16px 0; border-bottom: 1px solid rgba(232,228,219,.1); }
+.club-screen-entry h3 { margin: 0 0 10px; font-size: 16px; color: #fff; }
+.club-screen-entry h3 small { font-weight: 400; color: rgba(232,228,219,.55); }
+.club-screen-answers { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 14px; }
+.club-screen-answers li { display: flex; justify-content: space-between; gap: 16px; color: rgba(232,228,219,.75); }
+.club-screen-answers li.is-flag strong { color: #f0d38a; }
+.club-screen-details { margin: 10px 0 0; font-size: 14px; }
+.club-screen-review { margin-top: 12px; padding: 10px 14px; border-left: 3px solid var(--gold); background: rgba(0,0,0,.2); font-size: 14px; }
+.club-screen-review p { margin: 6px 0 0; color: rgba(232,228,219,.75); }
+.club-review-form select { min-height: 50px; }
+.club-review-form select option { background: var(--ink); }
+@media (max-width: 760px) {
+  .club-step-card, .club-account-block { padding: 22px 18px; }
+  .club-book-fields-3 { grid-template-columns: 1fr; }
+  .club-summary > div { grid-template-columns: 1fr; gap: 4px; }
+  .club-account-bookings li { grid-template-columns: 1fr; gap: 4px; }
+  .club-screen-answers li { flex-direction: column; gap: 2px; }
+}

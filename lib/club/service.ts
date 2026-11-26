@@ -1,6 +1,7 @@
 import "server-only";
 import { CLUB } from "./config";
 import { db, payments } from "./server";
+import { getHealth, isReviewedSuitable } from "./customers";
 import {
   sendBookingConfirmation,
   sendCancellation,
@@ -47,6 +48,9 @@ export type BookingRow = {
   cancelled_by: string | null;
   confirmed_at: string | null;
   created_at: string;
+  customer_id: string | null;
+  children_snapshot: { name: string; age: string; relationship: string }[] | null;
+  health_consent_version: string | null;
 };
 
 function check<T>(res: { data: T; error: { message: string } | null }): T {
@@ -101,7 +105,7 @@ export async function listClasses(): Promise<PublicClass[]> {
 export async function offerSpaces(classId: string) {
   const offered = check(
     await db().rpc("club_offer_spaces", { p_class_id: classId, p_offer_hours: CLUB.offerHours }),
-  ) as { name: string; email: string; offer_token: string; offer_expires_at: string }[];
+  ) as { class_id: string; name: string; email: string; offer_token: string; offer_expires_at: string }[];
   if (!offered?.length) return;
   const cls = await getClass(classId);
   await Promise.all(offered.map((p) => sendSpaceOffered(p, cls)));
@@ -143,7 +147,19 @@ export async function confirmBooking(opts: {
   const cls = await getClass(booking.class_id);
 
   if (result === "confirmed") {
-    await sendBookingConfirmation(booking, cls);
+    const health = booking.customer_id ? await getHealth(booking.customer_id) : null;
+    await sendBookingConfirmation(
+      booking,
+      cls,
+      health
+        ? {
+            childrenAttending: booking.children_snapshot ?? [],
+            reviewed: isReviewedSuitable(health.status),
+            deferred: health.status === "deferred",
+            healthConsentGiven: Boolean(booking.health_consent_version),
+          }
+        : null,
+    );
   } else {
     const refundId = await refund(opts.paymentIntent);
     await db()
