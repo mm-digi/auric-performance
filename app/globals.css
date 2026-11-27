@@ -1867,6 +1867,7 @@ button {
 
 @media (max-width: 760px) {
   .club-class { grid-template-columns: 1fr auto; gap: 12px 16px; }
+  .club-class-spaces:not(:has(span)) { display: none; }
   .club-class-spaces { grid-column: 1 / -1; grid-row: 2; }
   .club-class .btn { min-width: 0; }
   .club-book-panel { padding: 22px 18px; }

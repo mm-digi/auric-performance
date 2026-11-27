@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CLUB } from "@/lib/club/config";
-import { formatPrice, formatShortDate } from "@/lib/club/format";
+import { formatPrice, formatShortDate, placeScarcity } from "@/lib/club/format";
 
 type ClubClass = {
   id: string;
@@ -13,6 +13,48 @@ type ClubClass = {
   capacity: number;
   pricePence: number;
 };
+
+/** Sample rows so the wording can be checked locally. Not shown on the published site. */
+const EXAMPLES: ClubClass[] = [
+  { id: "example-open", startsAt: "2026-11-07T07:30:00.000Z", cancelled: false, spacesLeft: 12, capacity: 12, pricePence: 1000 },
+  { id: "example-nearly", startsAt: "2026-11-14T07:30:00.000Z", cancelled: false, spacesLeft: 6, capacity: 12, pricePence: 1000 },
+  { id: "example-3", startsAt: "2026-11-21T07:30:00.000Z", cancelled: false, spacesLeft: 3, capacity: 12, pricePence: 1000 },
+  { id: "example-2", startsAt: "2026-11-28T07:30:00.000Z", cancelled: false, spacesLeft: 2, capacity: 12, pricePence: 1000 },
+  { id: "example-1", startsAt: "2026-12-05T07:30:00.000Z", cancelled: false, spacesLeft: 1, capacity: 12, pricePence: 1000 },
+  { id: "example-full", startsAt: "2026-12-12T07:30:00.000Z", cancelled: false, spacesLeft: 0, capacity: 12, pricePence: 1000 },
+];
+
+function ClassRow({ c, bookingOpen, example = false }: { c: ClubClass; bookingOpen: boolean; example?: boolean }) {
+  const full = c.spacesLeft === 0;
+  const scarcity = c.cancelled ? null : placeScarcity(c.spacesLeft, c.capacity);
+  const label = c.cancelled ? "Cancelled" : full ? "Join waiting list" : "Book";
+  return (
+    <li className={`club-class${c.cancelled ? " is-cancelled" : ""}`}>
+      <div className="club-class-date">
+        <strong>{formatShortDate(c.startsAt)}</strong>
+        <span>{CLUB.time}</span>
+      </div>
+      <div className="club-class-spaces">
+        {(c.cancelled || scarcity) && <span>{c.cancelled ? "Cancelled" : scarcity}</span>}
+        {scarcity && !full && (
+          <div className="club-class-meter" aria-hidden="true">
+            <i style={{ width: `${((c.capacity - c.spacesLeft) / c.capacity) * 100}%` }} />
+          </div>
+        )}
+      </div>
+      {!c.cancelled &&
+        (example || !bookingOpen ? (
+          <span className={`btn${full ? "" : " btn-gold"}${example || !bookingOpen ? " is-disabled" : ""}`} aria-disabled="true">
+            {label}
+          </span>
+        ) : (
+          <Link href={`/280-club/book/${c.id}`} className={`btn${full ? "" : " btn-gold"}`}>
+            {label}
+          </Link>
+        ))}
+    </li>
+  );
+}
 
 /** Upcoming Saturdays with live spaces. Booking itself happens on /280-club/book/[id] after sign-in. */
 export default function ClubBooking() {
@@ -55,35 +97,22 @@ export default function ClubBooking() {
       {loadError && <p className="club-book-error">{loadError}</p>}
       {!classes && !loadError && <p className="club-book-loading">Loading classes…</p>}
 
+      {process.env.NODE_ENV === "development" && (
+        <>
+          <p className="club-book-notice">Examples only. These Saturdays are not real and the buttons do not book.</p>
+          <ul className="club-class-list">
+            {EXAMPLES.map((c) => (
+              <ClassRow key={c.id} c={c} bookingOpen={bookingOpen} example />
+            ))}
+          </ul>
+        </>
+      )}
+
       {classes && (
         <ul className="club-class-list">
-          {classes.map((c) => {
-            const full = c.spacesLeft === 0;
-            return (
-              <li key={c.id} className={`club-class${c.cancelled ? " is-cancelled" : ""}`}>
-                <div className="club-class-date">
-                  <strong>{formatShortDate(c.startsAt)}</strong>
-                  <span>{CLUB.time}</span>
-                </div>
-                <div className="club-class-spaces">
-                  <span>{c.cancelled ? "Cancelled" : full ? "Full" : `${c.spacesLeft} of ${c.capacity} places left`}</span>
-                  {!c.cancelled && (
-                    <div className="club-class-meter" aria-hidden="true">
-                      <i style={{ width: `${((c.capacity - c.spacesLeft) / c.capacity) * 100}%` }} />
-                    </div>
-                  )}
-                </div>
-                {!c.cancelled &&
-                  (bookingOpen ? (
-                    <Link href={`/280-club/book/${c.id}`} className={`btn${full ? "" : " btn-gold"}`}>
-                      {full ? "Join waiting list" : "Book"}
-                    </Link>
-                  ) : (
-                    <span className="btn btn-gold is-disabled" aria-disabled="true">Book</span>
-                  ))}
-              </li>
-            );
-          })}
+          {classes.map((c) => (
+            <ClassRow key={c.id} c={c} bookingOpen={bookingOpen} />
+          ))}
         </ul>
       )}
 
