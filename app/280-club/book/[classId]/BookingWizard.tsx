@@ -25,7 +25,7 @@ import {
   type PermissionKey,
 } from "@/lib/club/config";
 import { healthMessage, type HealthView } from "@/lib/club/customer-view";
-import { formatClassDate, formatDateTime, formatPrice } from "@/lib/club/format";
+import { formatClassDate, formatDateTime, formatPrice, placeScarcity } from "@/lib/club/format";
 
 type Cls = { id: string; startsAt: string; spacesLeft: number; capacity: number; pricePence: number };
 
@@ -152,6 +152,7 @@ export default function BookingWizard(props: {
 
   let n = 0;
   const step = () => String(++n).padStart(2, "0");
+  const scarcity = placeScarcity(cls.spacesLeft, cls.capacity);
 
   return (
     <div className="club-wizard">
@@ -163,7 +164,8 @@ export default function BookingWizard(props: {
         <p className="club-book-notice">We&rsquo;re holding a place for you until {formatDateTime(offer.expiresAt)}.</p>
       ) : (
         <p className="club-book-intro">
-          {cls.spacesLeft} of {cls.capacity} places left · {formatPrice(cls.pricePence)} per adult · children free.
+          {scarcity ? `${scarcity} · ` : ""}
+          {formatPrice(cls.pricePence)} per adult · children free.
         </p>
       )}
       {!props.bookingOpen && (
